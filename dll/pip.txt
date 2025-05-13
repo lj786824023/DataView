@@ -1,0 +1,48 @@
+
+-- 安装
+pip install -i https://mirrors.aliyun.com/pypi/simple pyqt5
+pip install -i https://mirrors.aliyun.com/pypi/simple pyqt5-tools
+pip install -i https://mirrors.aliyun.com/pypi/simple pyinstaller
+pip install -i https://mirrors.aliyun.com/pypi/simple cx_Oracle
+pip install -i https://mirrors.aliyun.com/pypi/simple pymysql
+pip install -i https://mirrors.aliyun.com/pypi/simple pandas
+pip install -i https://mirrors.aliyun.com/pypi/simple openpyxl
+pip install -i https://mirrors.aliyun.com/pypi/simple cryptography
+pip install -i https://mirrors.aliyun.com/pypi/simple dmPython
+pip install -i https://mirrors.aliyun.com/pypi/simple chardet
+
+pip3 install -i https://mirrors.aliyun.com/pypi/simple dmapi
+pip3 install -i pip3 install -i https://mirrors.aliyun.com/pypi/simple dmPython
+ dmPython dmPython
+
+pip install -i https://mirrors.aliyun.com/pypi/simple pyside6
+pip install -i https://mirrors.aliyun.com/pypi/simple PySide6-Fluent-Widgets[full]
+pip install -i https://mirrors.aliyun.com/pypi/simple DBUtils
+pip install -i https://mirrors.aliyun.com/pypi/simple loguru
+DBUtils
+
+python3.8 -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple
+-- 更新
+pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade sip
+pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade pyqt5
+pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade pip
+
+python.exe -m pip install --upgrade pip
+
+--
+python -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple --trusted-host pypi.douban.com
+
+
+-- 离线下载
+pip download -i https://mirrors.aliyun.com/pypi/simple pymysql
+-- 安装离线模块
+pip install xxxxxx.whl
+
+-- git关闭ssl验证
+git config --global http.sslVerify false
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+git config --global http.sslBackend "openssl"
+
+
+pip search DBUtils -i https://mirrors.aliyun.com/pypi/simple

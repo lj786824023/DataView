@@ -1,0 +1,5 @@
+
+
+select * from etl.datamapping;
+select * from etl.datamapping;
+select count(1) from etl.datamapping;

@@ -1,0 +1,67 @@
+DELIMITER |
+
+CREATE DEFINER="gbase"@"%" PROCEDURE "pr_everyday_bak_tab"(
+	OUT	OUT_RES_MSG		VARCHAR(200),
+	IN	IN_TX_DATE		VARCHAR(8)
+)
+lable:begin
+/**********************
+* 说明：每日备份重要参数表
+* whd 20211129 new
+* 
+* 返回值：OUT_RES_MSG
+-- SUCCESSFUL	成功
+-- 12	失败
+*  *****************/
+	DECLARE ERR_CODE					VARCHAR(2000);
+	DECLARE ERR_MSG						VARCHAR(2000);
+	
+	DECLARE ETL_T_TAB_ENG_NAME 			VARCHAR(50)		DEFAULT 'everyday_bak_tab';
+	DECLARE ETL_TX_DATE 				VARCHAR(8)		DEFAULT IN_TX_DATE;
+	DECLARE ETL_STEP_NO					INTEGER			DEFAULT 1;
+	
+	DECLARE ETL_RUNNING_STEP_COUNT		INTEGER 		DEFAULT 0;
+	DECLARE ETL_CUR_TIMESTAMP			VARCHAR(19);
+	
+	-- 异常处理
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		GET DIAGNOSTICS condition 1 ERR_CODE = returned_sqlstate, ERR_MSG = message_text;
+		SELECT COUNT(*) INTO ETL_RUNNING_STEP_COUNT 
+		FROM ETL.ETL_JOB_STATUS_EDW 
+		WHERE table_name = ETL_T_TAB_ENG_NAME 
+		AND tx_date = ETL_TX_DATE 
+		AND step_status = 'Running';
+		
+		IF ETL_RUNNING_STEP_COUNT = 0 THEN
+			SELECT CURRENT_TIMESTAMP INTO ETL_CUR_TIMESTAMP;
+			INSERT INTO ETL.ETL_JOB_STATUS_EDW VALUES ('',ETL_USER_ID,ETL_T_TAB_ENG_NAME,ETL_TX_DATE,0,ERR_CODE,0,'Failed',ERR_CODE||':'||ERR_MSG,ETL_CUR_TIMESTAMP,ETL_CUR_TIMESTAMP);
+			SET OUT_RES_MSG = '12';
+
+		ELSE 
+			UPDATE ETL.ETL_JOB_STATUS_EDW
+			SET STEP_STATUS = 'Failed'
+			,STEP_ERR_LOG = ERR_CODE||':'||ERR_MSG
+			,LAST_END_TIME = CURRENT_TIMESTAMP
+			WHERE SQL_UNIT = ETL_T_TAB_ENG_NAME 
+			AND TX_DATE = ETL_TX_DATE 
+			AND STEP_STATUS = 'Running'
+			AND USER_ID = ETL_USER_ID
+			AND SQL_UNIT = ETL_T_TAB_ENG_NAME;
+		END IF;
+	END;
+	
+	-- 每日数据只保留一份
+	set @SQL_STR = 'delete from etl.datamapping_everyday_bak where replace(substring(loadtime,1,10),'-','') = ${TX_DATE_8}';
+	CALL etl.pr_exec_sql(@RTC,'',ETL_T_TAB_ENG_NAME,ETL_STEP_NO,@SQL_STR,ETL_TX_DATE);
+	IF @RTC <> 0 THEN LEAVE LABLE;END IF;
+	SELECT ETL_STEP_NO + 1 INTO ETL_STEP_NO;
+	
+	-- 备份datamapping 到 datamapping_everyday_bak
+	set @SQL_STR = 'insert into etl.datamapping_everyday_bak select t.*,CURRENT_TIMESTAMP from etl.datamapping t';
+	CALL etl.pr_exec_sql(@RTC,'',ETL_T_TAB_ENG_NAME,ETL_STEP_NO,@SQL_STR,ETL_TX_DATE);
+	IF @RTC <> 0 THEN LEAVE LABLE;END IF;
+	SELECT ETL_STEP_NO + 1 INTO ETL_STEP_NO;
+
+	SET OUT_RES_MSG = 'SUCCESSFUL';
+END |

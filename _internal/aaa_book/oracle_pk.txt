@@ -1,0 +1,14 @@
+-- oracle主键
+-- 查看建表语句 主键、唯一约束
+SELECT DBMS_METADATA.GET_DDL('TABLE','IB_HAF_MAIN_BOOK') FROM DUAL
+
+
+-- 查看所有约束
+select * from all_constraints t
+where t.OWNER='ZJYW'
+AND T.TABLE_NAME='IB_NOBLE_METAL_ORG'
+
+-- 查看约束对应的字段名
+select * from ALL_IND_COLUMNS t
+where t.index_OWNER='ZJYW'
+AND T.index_name='UNI_IB_NOBLE_METAL_ORG'

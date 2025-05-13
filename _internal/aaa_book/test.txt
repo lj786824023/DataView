@@ -1,0 +1,11 @@
+
+
+select * from etl.aaa
+
+delete from etl.aaa
+
+create table test.aaa(a int)
+
+select * from test.aaa
+
+drop table test.aaa

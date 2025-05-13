@@ -1,0 +1,350 @@
+2025-04-28 16:14:39.817 | INFO     | MyThread:__init__:146 - SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-04-28 16:14:39.824 | INFO     | MyThread:__init__:146 - SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-04-28 16:14:39.843 | INFO     | MyThread:__init__:146 - SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-04-28 16:18:22.603 | INFO     | MyThread:run:166 - 执行sql：SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-04-28 16:18:22.610 | INFO     | MyThread:run:166 - 执行sql：SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-04-28 16:18:22.617 | INFO     | MyThread:run:166 - 执行sql：SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-04-28 16:18:44.375 | INFO     | MyThread:run:160 - 执行sql：SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:18:47.378 | INFO     | MyThread:run:160 - 执行sql：SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:20:01.440 | INFO     | MyThread:run:166 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-04-28 16:20:01.447 | INFO     | MyThread:run:166 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-04-28 16:20:01.454 | INFO     | MyThread:run:166 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-04-28 16:20:03.974 | INFO     | MyThread:run:160 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:30:17.135 | WARNING  | __main__:timer_out:1312 - 连接超时
+2025-04-28 16:31:19.193 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-04-28 16:31:19.199 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-04-28 16:31:19.205 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-04-28 16:31:26.631 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:31:27.627 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:31:31.916 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:31:33.765 | INFO     | MyThread:run:163 - 执行sql：
+select * from ODS.ALM_BH where 1=1
+2025-04-28 16:32:59.783 | WARNING  | __main__:timer_out:1312 - 连接超时
+2025-04-28 16:33:17.275 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-04-28 16:33:17.275 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-04-28 16:33:17.275 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-04-28 16:33:18.457 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-04-28 16:33:19.313 | INFO     | MyThread:run:163 - 执行sql：
+select * from ODS.AOS_TB_COMMON_TRANS where 1=1
+2025-04-28 16:33:23.780 | INFO     | MyThread:run:163 - 执行sql：
+
+set @s1='abc';
+
+2025-04-28 16:33:25.345 | INFO     | MyThread:run:163 - 执行sql：
+
+select @s1
+2025-04-28 16:33:25.748 | INFO     | MyThread:run:163 - 执行sql：
+
+select @s1
+2025-04-28 16:33:26.138 | INFO     | MyThread:run:163 - 执行sql：
+
+select @s1
+2025-04-28 16:33:26.363 | INFO     | MyThread:run:163 - 执行sql：
+
+select @s1

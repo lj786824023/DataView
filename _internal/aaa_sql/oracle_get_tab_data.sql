@@ -1,0 +1,1 @@
+select * from :DATABASE_NAME.:TABLE_NAME limit :ROW

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>相似度</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="BodyLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>相似度大于：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="LineEdit" name="lineEdit_1">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>0.5</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="BodyLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>    每个目标字符串提取</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="LineEdit" name="lineEdit_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>10</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>条    </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CheckBox" name="cbx_one">
+        <property name="text">
+         <string>每个目标字符串至少出现1条</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CheckBox" name="cbx_case">
+        <property name="text">
+         <string>区分大小写</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="PushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>开始解析</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="MyTableWidget" name="tableWidget">
+      <property name="rowCount">
+       <number>10</number>
+      </property>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column>
+       <property name="text">
+        <string>[数据]源字符串</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>[数据]目标字符串</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>[结果]目标字符串</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>[结果]源字符串</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>[结果]相似度</string>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string>姓名</string>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string>贷款人姓名</string>
+       </property>
+      </item>
+      <item row="1" column="0">
+       <property name="text">
+        <string>身份证号</string>
+       </property>
+      </item>
+      <item row="1" column="1">
+       <property name="text">
+        <string>身份证号码</string>
+       </property>
+      </item>
+      <item row="2" column="0">
+       <property name="text">
+        <string>地址</string>
+       </property>
+      </item>
+      <item row="2" column="1">
+       <property name="text">
+        <string>地址名</string>
+       </property>
+      </item>
+      <item row="3" column="0">
+       <property name="text">
+        <string>联系电话</string>
+       </property>
+      </item>
+      <item row="3" column="1">
+       <property name="text">
+        <string>联系电话</string>
+       </property>
+      </item>
+      <item row="4" column="0">
+       <property name="text">
+        <string>贷款额</string>
+       </property>
+      </item>
+      <item row="4" column="1">
+       <property name="text">
+        <string>贷款额度</string>
+       </property>
+      </item>
+      <item row="5" column="0">
+       <property name="text">
+        <string>贷款利率</string>
+       </property>
+      </item>
+      <item row="5" column="1">
+       <property name="text">
+        <string>贷款</string>
+       </property>
+      </item>
+      <item row="6" column="0">
+       <property name="text">
+        <string>还款方式</string>
+       </property>
+      </item>
+      <item row="6" column="1">
+       <property name="text">
+        <string>还款方式</string>
+       </property>
+      </item>
+      <item row="7" column="0">
+       <property name="text">
+        <string>贷款年月份</string>
+       </property>
+      </item>
+      <item row="7" column="1">
+       <property name="text">
+        <string>贷款年份</string>
+       </property>
+      </item>
+      <item row="8" column="0">
+       <property name="text">
+        <string>贷款日期</string>
+       </property>
+      </item>
+      <item row="8" column="1">
+       <property name="text">
+        <string>贷款日期天</string>
+       </property>
+      </item>
+      <item row="9" column="0">
+       <property name="text">
+        <string>担保人</string>
+       </property>
+      </item>
+      <item row="9" column="1">
+       <property name="text">
+        <string>担保人编号</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>BodyLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>CheckBox</class>
+   <extends>QCheckBox</extends>
+   <header location="global">qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>MyTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header location="global">MyWidget</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

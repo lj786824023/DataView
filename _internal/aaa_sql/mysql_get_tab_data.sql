@@ -1,0 +1,1 @@
+select * from etl.datamapping_task limit %(ROW)s

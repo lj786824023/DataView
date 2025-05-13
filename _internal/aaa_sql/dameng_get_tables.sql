@@ -1,0 +1,6 @@
+SELECT
+	OWNER,
+	TABLE_NAME,
+	COMMENTS AS COMMENTS
+FROM
+	all_tab_comments

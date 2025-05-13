@@ -1,0 +1,4 @@
+
+set @s1='abc';
+
+select @s1

@@ -1,0 +1,1 @@
+select * from %(DATABASE_NAME)s.%(TABLE_NAME)S limit %(ROW)s
