@@ -222,7 +222,7 @@
              </widget>
             </item>
             <item>
-             <widget class="MyTableWidget" name="tbw_table">
+             <widget class="TableWidget" name="tbw_table">
               <property name="focusPolicy">
                <enum>Qt::NoFocus</enum>
               </property>
@@ -550,7 +550,7 @@ QTableWidget::item:selected {
              <widget class="PageTableWidget" name="tbw_column" native="true">
               <layout class="QHBoxLayout" name="horizontalLayout_26">
                <item>
-                <widget class="QTableWidget" name="tableWidget">
+                <widget class="TableWidget" name="tableWidget">
                  <column>
                   <property name="text">
                    <string>表名</string>
@@ -743,7 +743,7 @@ QTableWidget::item:selected {
              </widget>
             </item>
             <item>
-             <widget class="MyTableWidget" name="tbw_procedure">
+             <widget class="TableWidget" name="tbw_procedure">
               <property name="focusPolicy">
                <enum>Qt::NoFocus</enum>
               </property>
@@ -3316,7 +3316,7 @@ border : 0px;
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>MyTableWidget</class>
+   <class>TableWidget</class>
    <extends>QTableWidget</extends>
    <header location="global">MyWidget</header>
   </customwidget>

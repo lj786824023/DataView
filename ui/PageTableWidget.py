@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QSizePolicy,
     QSpacerItem, QTableWidgetItem, QVBoxLayout, QWidget)
 
-from MyWidget import MyTableWidget
+from MyWidget import TableWidget
 from qfluentwidgets import (BodyLabel, ComboBox, LineEdit, PushButton,
     StrongBodyLabel)
 
@@ -26,11 +26,11 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(853, 449)
+        Form.resize(860, 449)
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(9, 9, 9, 9)
-        self.tbw_table = MyTableWidget(Form)
+        self.tbw_table = TableWidget(Form)
         if (self.tbw_table.columnCount() < 3):
             self.tbw_table.setColumnCount(3)
         __qtablewidgetitem = QTableWidgetItem()

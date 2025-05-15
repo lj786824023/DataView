@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
     QSpacerItem, QSplitter, QStackedWidget, QTableWidget,
     QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
 
-from MyWidget import MyTableWidget
+from MyWidget import TableWidget
 from qfluentwidgets import (BodyLabel, CaptionLabel, CheckBox, ComboBox,
     DropDownPushButton, IconWidget, LineEdit, ListWidget,
     PasswordLineEdit, Pivot, PrimaryPushButton, PushButton,
@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.edt_table)
 
-        self.tbw_table = MyTableWidget(self.widget_1_1)
+        self.tbw_table = TableWidget(self.widget_1_1)
         if (self.tbw_table.columnCount() < 3):
             self.tbw_table.setColumnCount(3)
         __qtablewidgetitem = QTableWidgetItem()
@@ -326,7 +326,7 @@ class Ui_MainWindow(object):
         self.tbw_column.setObjectName(u"tbw_column")
         self.horizontalLayout_26 = QHBoxLayout(self.tbw_column)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
-        self.tableWidget = QTableWidget(self.tbw_column)
+        self.tableWidget = TableWidget(self.tbw_column)
         if (self.tableWidget.columnCount() < 6):
             self.tableWidget.setColumnCount(6)
         __qtablewidgetitem3 = QTableWidgetItem()
@@ -461,7 +461,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.edt_find_procedure)
 
-        self.tbw_procedure = MyTableWidget(self.widget_2_1)
+        self.tbw_procedure = TableWidget(self.widget_2_1)
         if (self.tbw_procedure.columnCount() < 3):
             self.tbw_procedure.setColumnCount(3)
         __qtablewidgetitem9 = QTableWidgetItem()

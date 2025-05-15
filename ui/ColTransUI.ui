@@ -94,7 +94,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="MyTableWidget" name="tbw_1">
+         <widget class="TableWidget" name="tbw_1">
           <property name="rowCount">
            <number>50</number>
           </property>
@@ -178,7 +178,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="MyTableWidget" name="tbw_2">
+         <widget class="TableWidget" name="tbw_2">
           <property name="rowCount">
            <number>10</number>
           </property>
@@ -227,7 +227,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="MyTableWidget" name="tbw_3">
+         <widget class="TableWidget" name="tbw_3">
           <column>
            <property name="text">
             <string>名次中文</string>
@@ -264,7 +264,7 @@
    <header location="global">qfluentwidgets</header>
   </customwidget>
   <customwidget>
-   <class>MyTableWidget</class>
+   <class>TableWidget</class>
    <extends>QTableWidget</extends>
    <header location="global">MyWidget</header>
   </customwidget>

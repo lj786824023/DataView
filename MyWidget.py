@@ -6,12 +6,15 @@ from PySide6.QtCore import Qt, Signal, Slot, QObject
 from PySide6.QtGui import QAction, QColor, QShortcut, QKeySequence
 from PySide6.QtWidgets import QApplication, QTableWidgetItem, QDialog, QGroupBox, QRadioButton, QVBoxLayout, \
     QPushButton, QHBoxLayout, QTableWidget, QWidget
-from qfluentwidgets import RoundMenu, TableWidget, RoundMenu, SmoothScrollDelegate, TableItemDelegate
+from qfluentwidgets import RoundMenu, TableWidget, RoundMenu, SmoothScrollDelegate, TableItemDelegate, PushButton, \
+    RadioButton
 
 
-class MyTableWidget(QTableWidget):
+class TableWidget(QTableWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
+        # self.setColumnCount(30)
+        # self.setRowCount(30)
         self.copy_action = QAction("复制", self)
         self.copy_head_action = QAction("复制表头", self)  # 复制表头
         self.paste_action = QAction("粘贴", self)
@@ -41,33 +44,33 @@ class MyTableWidget(QTableWidget):
         super().setItemDelegate(self.delegate)
 
         # 如下代码设置横向表格头的间隔线，有四个方向的间隔线,不需要间隔线的可以设置为0px
-        # self.horizontalHeader().setStyleSheet("QHeaderView::section{"
-        #                                       "border-top:0px solid #E5E5E5;"
-        #                                       "border-left:0px solid #E5E5E5;"
-        #                                       "border-right:0.5px solid #E5E5E5;"
-        #                                       "border-bottom: 0.5px solid #E5E5E5;"
-        #                                       "background-color:white;"
-        #                                       "padding:4px;"
-        #                                       "}")
+        self.horizontalHeader().setStyleSheet("QHeaderView::section{"
+                                              "border-top:0px solid #E5E5E5;"
+                                              "border-left:0px solid #E5E5E5;"
+                                              "border-right:0.5px solid #E5E5E5;"
+                                              "border-bottom: 0.5px solid #E5E5E5;"
+                                              "background-color:white;"
+                                              "padding:4px;"
+                                              "}")
         # 如下代码设置纵向表格头的间隔线，有四个方向的间隔线, 不需要间隔线的可以设置为0px
-        # self.verticalHeader().setStyleSheet("QHeaderView::section{"
-        #                                     "border-top:0px solid #E5E5E5;"
-        #                                     "border-left:0px solid #E5E5E5;"
-        #                                     "border-right:0.5px solid #E5E5E5;"
-        #                                     "border-bottom: 0.5px solid #E5E5E5;"
-        #                                     "background-color:white;"
-        #                                     "padding:4px;"
-        #                                     "}")
+        self.verticalHeader().setStyleSheet("QHeaderView::section{"
+                                            "border-top:0px solid #E5E5E5;"
+                                            "border-left:0px solid #E5E5E5;"
+                                            "border-right:0.5px solid #E5E5E5;"
+                                            "border-bottom: 0.5px solid #E5E5E5;"
+                                            "background-color:white;"
+                                            "padding:4px;"
+                                            "}")
         # 如下代码设置列表左上角那个格子的边框线
-        # self.setStyleSheet(
-        #     "QTableCornerButton::section{"
-        #     "border-top:0px solid #E5E5E5;"
-        #     "border-left:0px solid #E5E5E5;"
-        #     "border-right:0.5px solid #E5E5E5;"
-        #     "border-bottom: 0.5px solid #E5E5E5;"
-        #     "background-color:white;"
-        #     "}"
-        # )
+        self.setStyleSheet(
+            "QTableCornerButton::section{"
+            "border-top:0px solid #E5E5E5;"
+            "border-left:0px solid #E5E5E5;"
+            "border-right:0.5px solid #E5E5E5;"
+            "border-bottom: 0.5px solid #E5E5E5;"
+            "background-color:white;"
+            "}"
+        )
 
         self.copy_action.triggered.connect(self.copy_selection)
         self.copy_head_action.triggered.connect(self.copy_head_selection)
@@ -114,7 +117,7 @@ class MyTableWidget(QTableWidget):
         self.customContextMenuRequested.connect(self.showContextMenu)
 
     def showContextMenu(self, pos):
-        menu = RoundMenu(self)
+        menu = RoundMenu()
         align_menu = RoundMenu('对齐方式', self)
 
         insert_action = QAction("插入", self)
@@ -213,6 +216,7 @@ class MyTableWidget(QTableWidget):
         text = "\n".join(['\t'.join([self.item(row, col).text() if self.item(row, col) is not None else ''
                                      for col in range(selected.leftColumn(), selected.rightColumn() + 1)])
                           for row in range(selected.topRow(), selected.bottomRow() + 1)])
+        text += "\n" # add by ljz
         QApplication.clipboard().setText(text)
 
     def copy_head_selection(self):
@@ -229,8 +233,10 @@ class MyTableWidget(QTableWidget):
         selected = self.selectedRanges()[0]
         text = QApplication.clipboard().text()
         rows = text.split('\n')
-        if '' in rows:
-            rows.remove('')
+        # if '' in rows:
+        #     rows.remove('')
+        if not rows[-1]: # add by ljz
+            rows = rows[:-1]
 
         for r, row in enumerate(rows):
             if selected.topRow() + r >= self.rowCount():
@@ -442,20 +448,6 @@ class MyTableWidget(QTableWidget):
             for j in range(self.columnCount()):
                 col_data.append(self.item(i, j).text())
             row_data.append(col_data)
-        # # 获取当前排序标志
-        # sort_flag = True
-        # if tbw == self.myUI.tbw_column:
-        #     self.tbw_column_sort_flag = not self.tbw_column_sort_flag
-        #     sort_flag = self.tbw_column_sort_flag
-        # if tbw == self.myUI.tbw_sql_result_1.tbw_table:
-        #     self.tbw_sql_result_1_sort_flag = not self.tbw_sql_result_1_sort_flag
-        #     sort_flag = self.tbw_sql_result_1_sort_flag
-        # if tbw == self.myUI.tbw_sql_result_2.tbw_table:
-        #     self.tbw_sql_result_2_sort_flag = not self.tbw_sql_result_2_sort_flag
-        #     sort_flag = self.tbw_sql_result_2_sort_flag
-        # if tbw == self.myUI.tbw_sql_result_3.tbw_table:
-        #     self.tbw_sql_result_3_sort_flag = not self.tbw_sql_result_3_sort_flag
-        #     sort_flag = self.tbw_sql_result_3_sort_flag
 
         # 判断选中列是否全是数字
         decimal_flag = True  # 默认全数字
@@ -492,10 +484,10 @@ class DeleteInsertDialog(QDialog):
         self.groupBox.setFlat(True)
 
         # 1.1 创建RadioButton
-        self.radioButtonA = QRadioButton()
-        self.radioButtonB = QRadioButton()
-        self.radioButtonC = QRadioButton()
-        self.radioButtonD = QRadioButton()
+        self.radioButtonA = RadioButton()
+        self.radioButtonB = RadioButton()
+        self.radioButtonC = RadioButton()
+        self.radioButtonD = RadioButton()
 
         # 1.2 将RadioButton添加到GroupBox中
         gb_vbox = QVBoxLayout()
@@ -506,8 +498,8 @@ class DeleteInsertDialog(QDialog):
         self.groupBox.setLayout(gb_vbox)
 
         # 2. 创建确定和取消按钮
-        self.buttonOK = QPushButton("确定")
-        self.buttonCancel = QPushButton("取消")
+        self.buttonOK = PushButton("确定")
+        self.buttonCancel = PushButton("取消")
 
         # 2.1 将按钮添加到水平布局中
         hbox = QHBoxLayout()
@@ -587,7 +579,7 @@ class UsingCleverTW(QDialog):  # 测试类
         self.setWindowTitle("CleverTableWidget")
         self.setWindowFlags(
             Qt.WindowType.WindowMinimizeButtonHint | Qt.WindowType.WindowMaximizeButtonHint | Qt.WindowType.WindowCloseButtonHint)
-        self.tableWidget = MyTableWidget()
+        self.tableWidget = TableWidget()
         self.tableWidget.setRowCount(10)
         self.tableWidget.setColumnCount(5)
 
@@ -610,9 +602,6 @@ class UsingCleverTW(QDialog):  # 测试类
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
-    w = QWidget()
-    ui = PageTableWidget()
-    ui.setupUi(w)
-    ui.initUI()
+    w = UsingCleverTW()
     w.show()
     sys.exit(app.exec())  # pyside6

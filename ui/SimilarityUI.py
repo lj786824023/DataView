@@ -19,8 +19,10 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QLabel,
     QMainWindow, QSizePolicy, QSpacerItem, QTableWidgetItem,
     QVBoxLayout, QWidget)
 
-from MyWidget import MyTableWidget
 from qfluentwidgets import (BodyLabel, CheckBox, LineEdit, PushButton)
+
+from MyWidget import TableWidget
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -102,7 +104,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.tableWidget = MyTableWidget(self.centralwidget)
+        self.tableWidget = TableWidget(self.centralwidget)
         if (self.tableWidget.columnCount() < 5):
             self.tableWidget.setColumnCount(5)
         __qtablewidgetitem = QTableWidgetItem()

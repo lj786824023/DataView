@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QHBoxLayout, QHeaderView, QMainWind
     QSizePolicy, QSpacerItem, QTabWidget, QTableWidgetItem,
     QVBoxLayout, QWidget)
 
-from MyWidget import MyTableWidget
+from MyWidget import TableWidget
 from qfluentwidgets import (BodyLabel, PushButton)
 
 class Ui_MainWindow(object):
@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
         self.tab_1.setObjectName(u"tab_1")
         self.horizontalLayout_2 = QHBoxLayout(self.tab_1)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.tbw_1 = MyTableWidget(self.tab_1)
+        self.tbw_1 = TableWidget(self.tab_1)
         if (self.tbw_1.columnCount() < 4):
             self.tbw_1.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.tab_2.setObjectName(u"tab_2")
         self.horizontalLayout_3 = QHBoxLayout(self.tab_2)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.tbw_2 = MyTableWidget(self.tab_2)
+        self.tbw_2 = TableWidget(self.tab_2)
         if (self.tbw_2.columnCount() < 5):
             self.tbw_2.setColumnCount(5)
         __qtablewidgetitem4 = QTableWidgetItem()
@@ -120,7 +120,7 @@ class Ui_MainWindow(object):
         self.tab_3.setObjectName(u"tab_3")
         self.horizontalLayout_4 = QHBoxLayout(self.tab_3)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.tbw_3 = MyTableWidget(self.tab_3)
+        self.tbw_3 = TableWidget(self.tab_3)
         if (self.tbw_3.columnCount() < 3):
             self.tbw_3.setColumnCount(3)
         __qtablewidgetitem9 = QTableWidgetItem()
