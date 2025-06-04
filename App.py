@@ -253,8 +253,8 @@ class MyMainWindow(QMainWindow):
         self.thread_pool.sign_err.connect(logger.warning)
         self.thread_pool.sign_err.connect(lambda: self.myUI.btn_connect.setEnabled(True))
 
-        # 2秒连接超时
-        QTimer.singleShot(2000, lambda: self.timer_out(self.thread_pool, "连接超时"))
+        # 10秒连接超时
+        QTimer.singleShot(10000, lambda: self.timer_out(self.thread_pool, "连接超时"))
         self.thread_pool.start()
 
     def createErrorInfoBar(self, text):
@@ -1300,8 +1300,8 @@ class MyMainWindow(QMainWindow):
         self.thread_test_pool.sign_err.connect(logger.warning)
         self.thread_test_pool.sign_err.connect(lambda: self.myUI.btn_test_db.setEnabled(True))
 
-        # 2秒连接超时
-        QTimer.singleShot(2000, lambda: self.timer_out(self.thread_test_pool, "连接超时"))
+        # 10秒连接超时
+        QTimer.singleShot(10000, lambda: self.timer_out(self.thread_test_pool, "连接超时"))
         self.thread_test_pool.start()
 
     def test_func(self, *args, **kwargs):
