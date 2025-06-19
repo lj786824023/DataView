@@ -2095,3 +2095,3101 @@ select T.TABLE_NAME,
  where T.OWNER = :DATABASE_NAME
    and T.TABLE_NAME = :TABLE_NAME
  order by T1.COLUMN_ID
+2025-06-11 14:58:40.748 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-11 14:58:41.972 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-11 14:58:42.910 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-11 14:58:50.566 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 14:58:52.315 | INFO     | MyThread:run:163 - 执行sql：
+select * from bi-cgrzzl-direct-rent.company_apply_order where 1=1
+2025-06-11 14:58:52.515 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.company_apply_order where 1=1' at line 1")
+2025-06-11 14:59:05.494 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 14:59:07.044 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 14:59:08.957 | INFO     | MyThread:run:163 - 执行sql：
+select * from bi-cgrzzl-direct-rent.company_apply_order where 1=1
+2025-06-11 14:59:09.166 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.company_apply_order where 1=1' at line 1")
+2025-06-11 14:59:11.484 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 14:59:24.495 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from bi-cgrzzl-direct-rent.company_apply_orde
+2025-06-11 14:59:24.611 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.company_apply_orde' at line 1")
+2025-06-11 14:59:28.479 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from bi-cgrzzl-direct-rent.company_apply_order
+2025-06-11 14:59:28.604 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.company_apply_order' at line 1")
+2025-06-11 14:59:39.009 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from company_apply_order
+2025-06-11 15:08:36.133 | INFO     | MyThread:run:163 - 执行sql：
+
+               select count(1) from factoring_apply_order pao
+2025-06-11 15:08:44.264 | INFO     | MyThread:run:163 - 执行sql：
+
+               select * from factoring_apply_order pao
+2025-06-11 15:09:45.603 | INFO     | MyThread:run:163 - 执行sql：
+
+                   select count(1) from factoring_selling_info paoci
+2025-06-11 15:09:51.032 | INFO     | MyThread:run:163 - 执行sql：
+
+                   select count(1) from factoring_selling_info paoci
+2025-06-11 15:17:22.812 | INFO     | MyThread:run:163 - 执行sql：
+select 'com_gua_legal_person_info',count(1) from com_gua_legal_person_info union all
+select 'com_gua_natural_person_info',count(1) from com_gua_natural_person_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_approval',count(1) from company_apply_order_approval union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_approval',count(1) from factoring_apply_order_approval union all
+select 'factoring_gua_legal_person',count(1) from factoring_gua_legal_person union all
+select 'factoring_gua_natural_person',count(1) from factoring_gua_natural_person union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_gua_legal_person_info',count(1) from per_gua_legal_person_info union all
+select 'per_gua_natural_person_info',count(1) from per_gua_natural_person_info union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info
+
+2025-06-11 15:17:22.893 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.com_gua_legal_person_info' doesn't exist")
+2025-06-11 15:17:26.670 | INFO     | MyThread:run:163 - 执行sql：
+select 'com_gua_legal_person_info',count(1) from com_gua_legal_person_info union all
+select 'com_gua_natural_person_info',count(1) from com_gua_natural_person_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_approval',count(1) from company_apply_order_approval union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_approval',count(1) from factoring_apply_order_approval union all
+select 'factoring_gua_legal_person',count(1) from factoring_gua_legal_person union all
+select 'factoring_gua_natural_person',count(1) from factoring_gua_natural_person union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_gua_legal_person_info',count(1) from per_gua_legal_person_info union all
+select 'per_gua_natural_person_info',count(1) from per_gua_natural_person_info union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info
+
+2025-06-11 15:17:26.806 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.com_gua_legal_person_info' doesn't exist")
+2025-06-11 15:18:16.558 | INFO     | MyThread:run:163 - 执行sql：
+select 'com_gua_legal_person_info',count(1) from company_guarantee_legal_person_info union all
+select 'com_gua_natural_person_info',count(1) from company_guarantee_natural_person_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_approval',count(1) from company_apply_order_approval union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_approval',count(1) from factoring_apply_order_approval union all
+select 'factoring_gua_legal_person',count(1) from factoring_gua_legal_person union all
+select 'factoring_gua_natural_person',count(1) from factoring_gua_natural_person union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_gua_legal_person_info',count(1) from per_gua_legal_person_info union all
+select 'per_gua_natural_person_info',count(1) from per_gua_natural_person_info union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info
+
+2025-06-11 15:18:16.671 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.factoring_gua_legal_person' doesn't exist")
+2025-06-11 15:19:22.934 | INFO     | MyThread:run:163 - 执行sql：
+select 'com_gua_legal_person_info',count(1) from company_guarantee_legal_person_info union all
+select 'com_gua_natural_person_info',count(1) from company_guarantee_natural_person_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_approval',count(1) from company_apply_order_approval union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_approval',count(1) from factoring_apply_order_approval union all
+select 'factoring_gua_legal_person',count(1) from factoring_guarantee_legal_person union all
+select 'factoring_gua_natural_person',count(1) from factoring_guarantee_natural_person union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_gua_legal_person_info',count(1) from personal_guarantee_legal_person_info union all
+select 'per_gua_natural_person_info',count(1) from personal_guarantee_natural_person_info union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info
+
+2025-06-11 15:39:18.848 | INFO     | MyThread:run:163 - 执行sql：
+select 'fact_order_supplement_info',count(1) from ods.fact_order_supplement_info union all
+select 'personal_appl_order_car_lease',count(1) from ods.personal_appl_order_car_lease union all
+select 'personal_appl_order_prod_lease',count(1) from ods.personal_appl_order_prod_lease union all
+select 'agency_account_info',count(1) from ods.agency_account_info union all
+select 'agency_cust_info',count(1) from ods.agency_cust_info union all
+select 'com_app_order_con_info',count(1) from ods.com_app_order_con_info union all
+select 'company_apply_order',count(1) from ods.company_apply_order union all
+select 'company_apply_order_car',count(1) from ods.company_apply_order_car union all
+select 'company_apply_order_cust_info',count(1) from ods.company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from ods.company_apply_order_product union all
+select 'dict_data',count(1) from ods.dict_data union all
+select 'factoring_apply_order',count(1) from ods.factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from ods.factoring_apply_order_car union all
+select 'factoring_product_information',count(1) from ods.factoring_product_information union all
+select 'factoring_selling_info',count(1) from ods.factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from ods.per_app_order_cont_info_lease union all
+select 'per_apply_order_contract_info',count(1) from ods.per_apply_order_contract_info union all
+select 'per_apply_order_cust_in_lease',count(1) from ods.per_apply_order_cust_in_lease union all
+select 'personal_apply_order',count(1) from ods.personal_apply_order union all
+select 'personal_apply_order_car',count(1) from ods.personal_apply_order_car union all
+select 'personal_apply_order_cust_info',count(1) from ods.personal_apply_order_cust_info union all
+select 'personal_apply_order_lease',count(1) from ods.personal_apply_order_lease union all
+select 'personal_apply_order_product',count(1) from ods.personal_apply_order_product union all
+select 'rely_company_cust_info',count(1) from ods.rely_company_cust_info
+2025-06-11 15:39:45.904 | INFO     | MyThread:run:163 - 执行sql：
+
+               select * from factoring_apply_order pao
+
+
+2025-06-11 15:39:56.091 | WARNING  | MyThread:run:199 - sql异常：(2013, 'Lost connection to MySQL server during query ([WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。)')
+2025-06-11 15:40:04.196 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-11 15:40:05.636 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-11 15:40:07.061 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-11 15:40:46.547 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-11 15:40:47.987 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-11 15:40:49.394 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-11 15:41:08.918 | INFO     | MyThread:run:163 - 执行sql：
+select 'fact_order_supplement_info',count(1) from ods.fact_order_supplement_info union all
+select 'personal_appl_order_car_lease',count(1) from ods.personal_appl_order_car_lease union all
+select 'personal_appl_order_prod_lease',count(1) from ods.personal_appl_order_prod_lease union all
+select 'agency_account_info',count(1) from ods.agency_account_info union all
+select 'agency_cust_info',count(1) from ods.agency_cust_info union all
+select 'com_app_order_con_info',count(1) from ods.com_app_order_con_info union all
+select 'company_apply_order',count(1) from ods.company_apply_order union all
+select 'company_apply_order_car',count(1) from ods.company_apply_order_car union all
+select 'company_apply_order_cust_info',count(1) from ods.company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from ods.company_apply_order_product union all
+select 'dict_data',count(1) from ods.dict_data union all
+select 'factoring_apply_order',count(1) from ods.factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from ods.factoring_apply_order_car union all
+select 'factoring_product_information',count(1) from ods.factoring_product_information union all
+select 'factoring_selling_info',count(1) from ods.factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from ods.per_app_order_cont_info_lease union all
+select 'per_apply_order_contract_info',count(1) from ods.per_apply_order_contract_info union all
+select 'per_apply_order_cust_in_lease',count(1) from ods.per_apply_order_cust_in_lease union all
+select 'personal_apply_order',count(1) from ods.personal_apply_order union all
+select 'personal_apply_order_car',count(1) from ods.personal_apply_order_car union all
+select 'personal_apply_order_cust_info',count(1) from ods.personal_apply_order_cust_info union all
+select 'personal_apply_order_lease',count(1) from ods.personal_apply_order_lease union all
+select 'personal_apply_order_product',count(1) from ods.personal_apply_order_product union all
+select 'rely_company_cust_info',count(1) from ods.rely_company_cust_info
+2025-06-11 15:41:11.335 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'fact_order_supplement_info'")
+2025-06-11 15:41:37.701 | INFO     | MyThread:run:163 - 执行sql：
+select 'fact_order_supplement_info',count(1) from fact_order_supplement_info union all
+select 'personal_appl_order_car_lease',count(1) from personal_appl_order_car_lease union all
+select 'personal_appl_order_prod_lease',count(1) from personal_appl_order_prod_lease union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_app_order_con_info',count(1) from com_app_order_con_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'dict_data',count(1) from dict_data union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from per_app_order_cont_info_lease union all
+select 'per_apply_order_contract_info',count(1) from per_apply_order_contract_info union all
+select 'per_apply_order_cust_in_lease',count(1) from per_apply_order_cust_in_lease union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_lease',count(1) from personal_apply_order_lease union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info
+2025-06-11 15:41:38.086 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.fact_order_supplement_info' doesn't exist")
+2025-06-11 15:44:14.152 | INFO     | MyThread:run:163 - 执行sql：
+select 'fact_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'personal_appl_order_car_lease',count(1) from personal_appl_order_car_lease union all
+select 'personal_appl_order_prod_lease',count(1) from personal_appl_order_prod_lease union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_app_order_con_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'dict_data',count(1) from dict_data union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from personal_apply_order_contract_info_lease union all
+select 'per_apply_order_contract_info',count(1) from personal_apply_order_contract_info union all
+select 'per_apply_order_cust_in_lease',count(1) from personal_apply_order_cust_info_lease union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_lease',count(1) from personal_apply_order_lease union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info
+2025-06-11 15:44:14.445 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_appl_order_car_lease' doesn't exist")
+2025-06-11 15:45:15.786 | INFO     | MyThread:run:163 - 执行sql：
+select 'fact_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'personal_appl_order_car_lease',count(1) from personal_apply_order_car_lease union all
+select 'personal_appl_order_prod_lease',count(1) from personal_apply_order_product_lease union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_app_order_con_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'dict_data',count(1) from dict_data union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from personal_apply_order_contract_info_lease union all
+select 'per_apply_order_contract_info',count(1) from personal_apply_order_contract_info union all
+select 'per_apply_order_cust_in_lease',count(1) from personal_apply_order_cust_info_lease union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_lease',count(1) from personal_apply_order_lease union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info
+
+
+2025-06-11 16:23:43.611 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-11 16:23:44.608 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-11 16:23:45.977 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-11 16:23:52.881 | INFO     | MyThread:run:163 - 执行sql：
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from com_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from com_apply_order_payment_plan union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'per_apply_order_contract_info',count(1) from per_apply_order_contract_info union all
+select 'per_apply_order_payment_plan',count(1) from per_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_agency_scope',count(1) from rely_company_agency_scope union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+
+2025-06-11 16:23:53.406 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.com_apply_order_contract_info' doesn't exist")
+2025-06-11 16:25:12.338 | INFO     | MyThread:run:163 - 执行sql：
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'per_apply_order_contract_info',count(1) from personal_apply_order_contract_info union all
+select 'per_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_agency_scope',count(1) from rely_company_agency_scope union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+
+2025-06-11 16:25:12.667 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.sys_area_city' doesn't exist")
+2025-06-11 16:25:57.206 | INFO     | MyThread:run:163 - 执行sql：
+select 'sys_area_city',count(1) from sys_area_city
+
+2025-06-11 16:25:57.318 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.sys_area_city' doesn't exist")
+2025-06-11 16:26:04.715 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 16:26:07.969 | INFO     | MyThread:run:163 - 执行sql：
+select * from bi-cgrzzl-base.sys_area_city where 1=1
+2025-06-11 16:26:08.176 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_area_city where 1=1' at line 1")
+2025-06-11 16:26:38.816 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-11 16:26:58.635 | INFO     | MyThread:run:163 - 执行sql：
+select 'sys_area_city',count(1) from bi-cgrzzl-base.sys_area_city
+
+2025-06-11 16:26:58.771 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_area_city' at line 1")
+2025-06-11 16:27:10.012 | INFO     | MyThread:run:163 - 执行sql：
+select 'sys_area_city',count(1) from bi-cgrzzl-base.sys_area_city
+
+2025-06-11 16:27:10.075 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_area_city' at line 1")
+2025-06-11 16:27:39.683 | INFO     | MyThread:run:163 - 执行sql：
+select 'sys_area_city',count(1) from bi-cgrzzl-base.sys_area_city
+
+2025-06-11 16:27:39.805 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_area_city' at line 1")
+2025-06-11 16:27:50.204 | INFO     | MyThread:run:163 - 执行sql：
+select 'sys_area_city',count(1) from `bi-cgrzzl-base`.sys_area_city
+
+2025-06-11 16:27:56.526 | INFO     | MyThread:run:163 - 执行sql：
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'per_apply_order_contract_info',count(1) from personal_apply_order_contract_info union all
+select 'per_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'rely_company_agency_scope',count(1) from rely_company_agency_scope union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from `bi-cgrzzl-base`.sys_area_city
+2025-06-11 17:12:25.947 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-11 17:12:26.947 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-11 17:12:28.154 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-11 17:13:16.137 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'com_app_order_con_info',count(1) from ods.com_app_order_con_info union all
+select 'personal_apply_order_product',count(1) from ods.personal_apply_order_product
+
+2025-06-11 17:13:17.901 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'com_app_order_con_info'")
+2025-06-11 17:13:45.428 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'com_app_order_con_info',count(1) from ods.com_app_order_con_info union all
+select 'personal_apply_order_product',count(1) from ods.personal_apply_order_product
+2025-06-11 17:13:46.899 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'com_app_order_con_info'")
+2025-06-11 17:14:15.464 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select 'com_app_order_con_info',count(1) from company_apply_order_contract_info union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product
+
+2025-06-12 10:07:34.819 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 10:07:35.822 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 10:07:37.001 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 10:07:52.307 | INFO     | MyThread:run:163 - 执行sql：
+
+       select * from factoring_product_information fpi where  fpi.factoring_apply_order_id='3a1c6b90f8de4cf7876d53928cc07f98'
+2025-06-12 15:17:50.594 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 15:17:51.643 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 15:17:52.990 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 15:18:01.347 | INFO     | MyThread:run:163 - 执行sql：
+select * from factoring_product_information fpi where fpi.factoring_apply_order_id='3a1c6b90f8de4cf7876d53928cc07f98'
+2025-06-12 15:18:39.711 | INFO     | MyThread:run:163 - 执行sql：
+select * from factoring_product_information fpi where fpi.product_name='贴息-中联保理-0.33%-0.36%-月付-24期'
+
+2025-06-12 16:25:34.975 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 16:25:35.978 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 16:25:37.135 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 16:25:43.710 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select * from personal_apply_order_product where personal_apply_order_id='e52224057fe4b4bc3e75ff040183c542'
+2025-06-12 16:26:01.727 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from personal_apply_order_product
+2025-06-12 16:28:19.864 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select * from personal_apply_order_product where personal_apply_order_id='e52224057fe4b4bc3e75ff040183c542'
+2025-06-12 16:30:05.002 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from personal_apply_order_product where personal_apply_order_id='e52224057fe4b4bc3e75ff040183c542'
+
+2025-06-12 17:31:33.148 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 17:31:34.648 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 17:31:36.198 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 17:34:17.198 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select count(1) from personal_apply_order_product  
+
+2025-06-12 17:35:02.080 | INFO     | MyThread:run:163 - 执行sql：
+
+ select * from personal_apply_order where apply_code='CPHZ20220501N8023'
+
+2025-06-12 17:42:44.650 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from ﷐personal_apply_order_cust_info﷑
+2025-06-12 17:42:44.805 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.\ufdd0personal_apply_order_cust_info\ufdd1' doesn't exist")
+2025-06-12 17:43:04.916 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from personal_apply_order_cust_info﷐﷑
+2025-06-12 17:43:04.997 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cust_info\ufdd0\ufdd1' doesn't exist")
+2025-06-12 17:43:25.549 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select count(1) from personal_apply_order_cust_info﷐﷑
+2025-06-12 17:43:25.677 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cust_info\ufdd0\ufdd1' doesn't exist")
+2025-06-12 17:43:29.628 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from personal_apply_order_cust_info﷐﷑
+2025-06-12 17:43:29.764 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cust_info\ufdd0\ufdd1' doesn't exist")
+2025-06-12 17:44:22.482 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from personal_apply_order_cust_info﷐﷑
+2025-06-12 17:44:22.648 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cust_info\ufdd0\ufdd1' doesn't exist")
+2025-06-12 17:44:25.565 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from personal_apply_order_cust_info﷐﷑
+2025-06-12 17:44:25.784 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cust_info\ufdd0\ufdd1' doesn't exist")
+2025-06-12 17:44:29.036 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-12 17:44:46.976 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from bi-cgrzzl-direct-rent.personal_apply_order_cust_info
+2025-06-12 17:44:47.123 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.personal_apply_order_cust_info' at line 1")
+2025-06-12 17:44:56.615 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from bi-cgrzzl-direct-rent.personal_apply_order_cust_info
+2025-06-12 17:44:56.727 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.personal_apply_order_cust_info' at line 1")
+2025-06-12 17:45:04.898 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from `bi-cgrzzl-direct-rent`.personal_apply_order_cust_info
+
+2025-06-12 18:04:57.633 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 18:04:58.838 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 18:05:46.287 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 18:05:47.491 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 18:05:48.893 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 18:05:50.694 | INFO     | MyThread:run:163 - 执行sql：
+select * from personal_guarantee_legal_person_info
+where personal_apply_order_id='f95ec94a8c509b109aa515e8880bfbb1' 
+and ORGANIZATION_NUMBER='91131002MACNH5W69Y'
+2025-06-12 20:35:30.842 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-12 20:35:32.244 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-12 20:35:33.696 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-12 20:35:39.578 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from sys_user
+2025-06-12 20:35:40.043 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.sys_user' doesn't exist")
+2025-06-12 20:35:47.043 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-12 20:35:57.479 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from bi-cgrzzl-base.sys_user
+2025-06-12 20:35:57.680 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_user' at line 1")
+2025-06-12 20:36:08.614 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from `bi-cgrzzl-base`.sys_user	
+2025-06-12 20:36:40.499 | INFO     | MyThread:run:163 - 执行sql：
+select * from `bi-cgrzzl-base`.sys_user	where user_name='1387764264675573761'
+2025-06-12 20:36:43.033 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from `bi-cgrzzl-base`.sys_user
+2025-06-12 20:37:05.173 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select * from `bi-cgrzzl-base`.sys_user	where id='1387764264675573761'
+2025-06-13 17:49:12.538 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-13 17:49:12.906 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-13 17:49:13.240 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-13 17:49:22.159 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select *
+  from factoring_apply_order_approval
+ where approval_env_str = '信审审核'
+   and factoring_apply_order_id = '0d33a00df360b1c95c4ee9df01a8435a'
+2025-06-16 09:46:35.863 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-16 09:46:36.298 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-16 09:46:36.865 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-16 09:47:22.180 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-16 09:47:22.244 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-16 09:47:22.340 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-16 11:10:35.471 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-16 11:10:35.471 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-16 11:10:38.084 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-16 11:10:38.135 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-16 11:10:38.262 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-16 11:11:04.892 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-16 11:11:51.142 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-16 14:24:27.738 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-16 14:24:27.738 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-16 14:24:30.192 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-16 14:24:30.269 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-16 14:24:30.388 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-16 14:24:39.765 | INFO     | MyThread:run:163 - 执行sql：
+
+SELECT faoa.vehicles_number
+  FROM factoring_apply_order_car faoa
+ WHERE faoa.factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+
+2025-06-16 14:24:40.963 | WARNING  | MyThread:run:199 - sql异常：ORA-00942: table or view does not exist
+2025-06-16 14:25:53.798 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-16 14:25:54.214 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-16 14:25:54.812 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-16 14:26:03.011 | INFO     | MyThread:run:163 - 执行sql：
+
+SELECT faoa.vehicles_number
+  FROM factoring_apply_order_car faoa
+ WHERE faoa.factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+
+2025-06-16 14:33:43.264 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from factoring_discount_mechanism
+2025-06-16 14:47:17.387 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-16 14:47:17.444 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-16 14:47:17.564 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-16 14:47:33.185 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-16 14:47:34.871 | INFO     | MyThread:run:163 - 执行sql：
+select * from BITEST.FR_ZJK_NEW_AFTER_VERIFICATION where 1=1
+2025-06-16 15:08:50.870 | INFO     | MyThread:run:163 - 执行sql：
+SELECT conversion_amount
+  from factoring_disc_mechanism
+ where factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+   and institutional_type = 2
+   and conversion_amount > 0
+2025-06-16 15:08:51.075 | WARNING  | MyThread:run:199 - sql异常：ORA-00942: table or view does not exist
+2025-06-16 15:08:58.231 | INFO     | MyThread:run:163 - 执行sql：
+SELECT conversion_amount
+  from factoring_discount_mechanism
+ where factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+   and institutional_type = 2
+   and conversion_amount > 0
+2025-06-16 15:08:58.386 | WARNING  | MyThread:run:199 - sql异常：ORA-00942: table or view does not exist
+2025-06-16 15:09:06.751 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-16 15:09:07.343 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-16 15:09:07.928 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-16 15:09:13.418 | INFO     | MyThread:run:163 - 执行sql：
+SELECT conversion_amount
+  from factoring_discount_mechanism
+ where factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+   and institutional_type = 2
+   and conversion_amount > 0
+2025-06-16 15:36:17.321 | INFO     | MyThread:run:163 - 执行sql：
+SELECT conversion_amount
+  from factoring_discount_mechanism
+ where factoring_apply_order_id = '3a1c6b90f8de4cf7876d53928cc07f98'
+   and institutional_type = 2
+   and conversion_amount > 0
+2025-06-16 17:17:00.564 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-17 14:28:54.615 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-17 14:28:55.111 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-17 14:28:55.616 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-17 14:29:07.757 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-17 14:29:07.757 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-17 14:29:11.124 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-17 14:29:11.254 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-17 14:29:11.365 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-17 14:30:11.652 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-17 14:30:12.169 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-17 14:30:13.739 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-17 14:31:31.575 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-17 14:32:00.919 | INFO     | MyThread:run:163 - 执行sql：
+SELECT pao.contract_code     AS contractCode,
+       pao.apply_code        AS applyCode,
+       mat.vin               AS carId,
+       paop.loan_money       AS loanMOney, -- 放款金额
+       paop.financing_money  AS financingMoney, -- 融资金额
+       caosp.financing_money as singleFinancingMoney -- 单台车融资金额
+  FROM company_apply_order pao
+  LEFT JOIN ods.company_apply_order_product paop
+    ON paop.company_apply_order_id = pao.id
+  LEFT JOIN company_apply_order_car car
+    ON car.company_apply_order_id = pao.id
+  LEFT JOIN COMPANY_APP_ORDER_CAR_MATCHING mat
+    ON mat.company_apply_order_id = pao.id
+   and mat.company_apply_order_car_id = car.id
+  LEFT JOIN company_apply_order_sub_product caosp
+    on caosp.car_matching_id = mat.id
+ where pao.contract_code = 'HTHZ20220907N1378'
+   and mat.vin = 'LR83STGT8NB014012'
+2025-06-17 14:32:01.615 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'company_apply_order_product'")
+2025-06-17 14:32:06.531 | INFO     | MyThread:run:163 - 执行sql：
+SELECT pao.contract_code     AS contractCode,
+       pao.apply_code        AS applyCode,
+       mat.vin               AS carId,
+       paop.loan_money       AS loanMOney, -- 放款金额
+       paop.financing_money  AS financingMoney, -- 融资金额
+       caosp.financing_money as singleFinancingMoney -- 单台车融资金额
+  FROM company_apply_order pao
+  LEFT JOIN ods.company_apply_order_product paop
+    ON paop.company_apply_order_id = pao.id
+  LEFT JOIN company_apply_order_car car
+    ON car.company_apply_order_id = pao.id
+  LEFT JOIN COMPANY_APP_ORDER_CAR_MATCHING mat
+    ON mat.company_apply_order_id = pao.id
+   and mat.company_apply_order_car_id = car.id
+  LEFT JOIN company_apply_order_sub_product caosp
+    on caosp.car_matching_id = mat.id
+ where pao.contract_code = 'HTHZ20220907N1378'
+   and mat.vin = 'LR83STGT8NB014012'
+2025-06-17 14:32:07.330 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'company_apply_order_product'")
+2025-06-17 14:32:20.904 | INFO     | MyThread:run:163 - 执行sql：
+SELECT pao.contract_code     AS contractCode,
+       pao.apply_code        AS applyCode,
+       mat.vin               AS carId,
+       paop.loan_money       AS loanMOney, -- 放款金额
+       paop.financing_money  AS financingMoney, -- 融资金额
+       caosp.financing_money as singleFinancingMoney -- 单台车融资金额
+  FROM company_apply_order pao
+  LEFT JOIN company_apply_order_product paop
+    ON paop.company_apply_order_id = pao.id
+  LEFT JOIN company_apply_order_car car
+    ON car.company_apply_order_id = pao.id
+  LEFT JOIN COMPANY_APP_ORDER_CAR_MATCHING mat
+    ON mat.company_apply_order_id = pao.id
+   and mat.company_apply_order_car_id = car.id
+  LEFT JOIN company_apply_order_sub_product caosp
+    on caosp.car_matching_id = mat.id
+ where pao.contract_code = 'HTHZ20220907N1378'
+   and mat.vin = 'LR83STGT8NB014012'
+2025-06-17 14:32:21.023 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.company_app_order_car_matching' doesn't exist")
+2025-06-17 14:32:51.393 | INFO     | MyThread:run:163 - 执行sql：
+SELECT pao.contract_code     AS contractCode,
+       pao.apply_code        AS applyCode,
+       mat.vin               AS carId,
+       paop.loan_money       AS loanMOney, -- 放款金额
+       paop.financing_money  AS financingMoney, -- 融资金额
+       caosp.financing_money as singleFinancingMoney -- 单台车融资金额
+  FROM company_apply_order pao
+  LEFT JOIN company_apply_order_product paop
+    ON paop.company_apply_order_id = pao.id
+  LEFT JOIN company_apply_order_car car
+    ON car.company_apply_order_id = pao.id
+  LEFT JOIN COMPANY_APPLY_ORDER_CAR_MATCHING mat
+    ON mat.company_apply_order_id = pao.id
+   and mat.company_apply_order_car_id = car.id
+  LEFT JOIN company_apply_order_sub_product caosp
+    on caosp.car_matching_id = mat.id
+ where pao.contract_code = 'HTHZ20220907N1378'
+   and mat.vin = 'LR83STGT8NB014012'
+2025-06-17 14:33:09.233 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from COMPANY_APPLY_ORDER_CAR_MATCHING mat
+2025-06-17 14:36:10.658 | INFO     | MyThread:run:163 - 执行sql：
+select count(1) from company_apply_order_sub_product mat
+2025-06-17 15:10:48.638 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_app_order_car_matching',count(1) from company_app_order_car_matching union all
+select 'fact_apply_order_car_matching',count(1) from fact_apply_order_car_matching union all
+select 'fact_order_supplement_info',count(1) from fact_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from com_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from com_apply_order_payment_plan union all
+select 'com_apply_order_sub_product',count(1) from com_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_disc_mechanism',count(1) from factoring_disc_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from per_app_order_cont_info_lease union all
+select 'per_apply_order_payment_plan',count(1) from per_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:11:19.251 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.company_app_order_car_matching' doesn't exist")
+2025-06-17 15:11:49.231 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-17 15:11:50.013 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-17 15:11:50.535 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-17 15:11:53.553 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_app_order_car_matching',count(1) from company_app_order_car_matching union all
+select 'fact_apply_order_car_matching',count(1) from fact_apply_order_car_matching union all
+select 'fact_order_supplement_info',count(1) from fact_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from com_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from com_apply_order_payment_plan union all
+select 'com_apply_order_sub_product',count(1) from com_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_disc_mechanism',count(1) from factoring_disc_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'per_app_order_cont_info_lease',count(1) from per_app_order_cont_info_lease union all
+select 'per_apply_order_payment_plan',count(1) from per_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:11:53.761 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.company_app_order_car_matching' doesn't exist")
+2025-06-17 15:13:05.336 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'fact_apply_order_car_matching',count(1) from fact_apply_order_car_matching union all
+select 'fact_order_supplement_info',count(1) from fact_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from com_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from com_apply_order_payment_plan union all
+select 'com_apply_order_sub_product',count(1) from com_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_disc_mechanism',count(1) from factoring_disc_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'persona_apply_order_cont_info_lease',count(1) from persona_apply_order_cont_info_lease union all
+select 'persona_apply_order_payment_plan',count(1) from persona_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:13:05.530 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.fact_apply_order_car_matching' doesn't exist")
+2025-06-17 15:13:18.457 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-17 15:13:36.213 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'fact_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'com_apply_order_contract_info',count(1) from com_apply_order_contract_info union all
+select 'com_apply_order_payment_plan',count(1) from com_apply_order_payment_plan union all
+select 'com_apply_order_sub_product',count(1) from com_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_disc_mechanism',count(1) from factoring_disc_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'persona_apply_order_cont_info_lease',count(1) from persona_apply_order_cont_info_lease union all
+select 'persona_apply_order_payment_plan',count(1) from persona_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:13:36.363 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.com_apply_order_contract_info' doesn't exist")
+2025-06-17 15:14:00.190 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_disc_mechanism',count(1) from factoring_disc_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'persona_apply_order_cont_info_lease',count(1) from persona_apply_order_cont_info_lease union all
+select 'persona_apply_order_payment_plan',count(1) from persona_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:14:00.390 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.factoring_disc_mechanism' doesn't exist")
+2025-06-17 15:14:40.043 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_rel_personnel_info',count(1) from factoring_rel_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'persona_apply_order_cont_info_lease',count(1) from persona_apply_order_cont_info_lease union all
+select 'persona_apply_order_payment_plan',count(1) from persona_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:14:40.223 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.factoring_rel_personnel_info' doesn't exist")
+2025-06-17 15:15:12.681 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_related_personnel_info',count(1) from factoring_related_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'persona_apply_order_cont_info_lease',count(1) from persona_apply_order_cont_info_lease union all
+select 'persona_apply_order_payment_plan',count(1) from persona_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:15:12.861 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.persona_apply_order_cont_info_lease' doesn't exist")
+2025-06-17 15:15:42.813 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_related_personnel_info',count(1) from factoring_related_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'personal_apply_order_cont_info_lease',count(1) from personal_apply_order_cont_info_lease union all
+select 'personal_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:15:43.018 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cont_info_lease' doesn't exist")
+2025-06-17 15:16:05.656 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_related_personnel_info',count(1) from factoring_related_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'personal_apply_order_contract_info_lease',count(1) from personal_apply_order_contract_info_lease union all
+select 'personal_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'sys_area_city',count(1) from sys_area_city
+2025-06-17 15:16:05.851 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.sys_area_city' doesn't exist")
+2025-06-17 15:16:44.181 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_related_personnel_info',count(1) from factoring_related_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'personal_apply_order_contract_info_lease',count(1) from personal_apply_order_contract_info_lease union all
+select 'personal_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'bi-cgrzzl-base.sys_area_city',count(1) from `bi-cgrzzl-base`.sys_area_city
+2025-06-17 15:17:56.751 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select count(1) from factoring_order_car_gps
+
+2025-06-17 15:18:06.821 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from factoring_order_car_gps
+2025-06-17 15:18:10.744 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from factoring_order_car_gps
+
+2025-06-17 15:18:16.490 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(*) from factoring_order_car_gps
+
+2025-06-17 15:46:51.257 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'dict_data',count(1) from dict_data union all
+select 'company_apply_order_car_matching',count(1) from company_apply_order_car_matching union all
+select 'factoring_apply_order_car_matching',count(1) from factoring_apply_order_car_matching union all
+select 'factoring_order_supplement_info',count(1) from factoring_order_supplement_info union all
+select 'agency_account_info',count(1) from agency_account_info union all
+select 'agency_cust_info',count(1) from agency_cust_info union all
+select 'company_apply_order_contract_info',count(1) from company_apply_order_contract_info union all
+select 'company_apply_order_payment_plan',count(1) from company_apply_order_payment_plan union all
+select 'company_apply_order_sub_product',count(1) from company_apply_order_sub_product union all
+select 'company_apply_order',count(1) from company_apply_order union all
+select 'company_apply_order_car',count(1) from company_apply_order_car union all
+select 'company_apply_order_car_gps',count(1) from company_apply_order_car_gps union all
+select 'company_apply_order_cust_info',count(1) from company_apply_order_cust_info union all
+select 'company_apply_order_product',count(1) from company_apply_order_product union all
+select 'company_apply_order_sub',count(1) from company_apply_order_sub union all
+select 'company_related_personnel_info',count(1) from company_related_personnel_info union all
+select 'factoring_apply_order',count(1) from factoring_apply_order union all
+select 'factoring_apply_order_car',count(1) from factoring_apply_order_car union all
+select 'factoring_discount_mechanism',count(1) from factoring_discount_mechanism union all
+select 'factoring_order_car_gps',count(1) from factoring_order_car_gps union all
+select 'factoring_order_payment_plan',count(1) from factoring_order_payment_plan union all
+select 'factoring_product_information',count(1) from factoring_product_information union all
+select 'factoring_related_personnel_info',count(1) from factoring_related_personnel_info union all
+select 'factoring_selling_info',count(1) from factoring_selling_info union all
+select 'personal_apply_order_contract_info_lease',count(1) from personal_apply_order_contract_info_lease union all
+select 'personal_apply_order_payment_plan',count(1) from personal_apply_order_payment_plan union all
+select 'personal_apply_order',count(1) from personal_apply_order union all
+select 'personal_apply_order_car',count(1) from personal_apply_order_car union all
+select 'personal_apply_order_car_gps',count(1) from personal_apply_order_car_gps union all
+select 'personal_apply_order_cust_info',count(1) from personal_apply_order_cust_info union all
+select 'personal_apply_order_hang_car',count(1) from personal_apply_order_hang_car union all
+select 'personal_apply_order_product',count(1) from personal_apply_order_product union all
+select 'personal_leasehold_detail',count(1) from personal_leasehold_detail union all
+select 'rely_company_cust_info',count(1) from rely_company_cust_info union all
+select 'bi-cgrzzl-base.sys_area_city',count(1) from `bi-cgrzzl-base`.sys_area_city
+2025-06-17 15:47:24.431 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-17 15:47:24.892 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-17 15:47:25.434 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-17 15:47:58.316 | INFO     | MyThread:run:163 - 执行sql：
+
+select car.*
+  FROM company_apply_order pao
+  LEFT JOIN company_apply_order_cust_info paoci
+    ON paoci.company_apply_order_id = pao.id
+  LEFT JOIN company_related_personnel_info crpi
+    ON crpi.company_apply_order_id = pao.id
+   and crpi.position = 2
+  LEFT JOIN company_apply_order_product paop
+    ON paop.company_apply_order_id = pao.id
+  LEFT JOIN agency_cust_info aci
+    ON aci.id = pao.agency_cust_info_id
+  LEFT JOIN company_apply_order_car car
+    ON car.company_apply_order_id = pao.id
+    where pao.contract_code='HTLSHZ20230322N4775'
+
+2025-06-17 17:19:33.245 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-17 17:19:33.615 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-17 17:19:34.148 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-17 17:19:53.809 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-17 17:19:53.809 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-17 17:19:56.508 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-17 17:19:56.621 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-17 17:19:56.744 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-17 17:20:11.243 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-17 17:20:14.678 | INFO     | MyThread:run:163 - 执行sql：
+select * from ZJK.FR_ZJK_CAR_RULES where 1=1
+2025-06-17 17:26:12.988 | INFO     | MyThread:run:163 - 执行sql：
+select * from ZJK.FR_ZJK_CAR_RULES	
+
+2025-06-17 17:26:27.723 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-17 17:29:40.500 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values(\'' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:29:40.500 | WARNING  | MyThread:run:199 - sql异常：ORA-01756: quoted string not properly terminated
+2025-06-17 17:29:47.289 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values(''' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:30:18.672 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''','''||FACTORY_NAME||''');' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:30:18.688 | WARNING  | MyThread:run:199 - sql异常：ORA-01756: quoted string not properly terminated
+2025-06-17 17:30:59.119 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''',' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:31:05.632 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''',''' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:31:17.777 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''','''||FACTORY_NAME from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:31:29.164 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''','''||FACTORY_NAME||''');' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-17 17:31:29.164 | WARNING  | MyThread:run:199 - sql异常：ORA-01756: quoted string not properly terminated
+2025-06-17 17:31:34.320 | INFO     | MyThread:run:163 - 执行sql：
+select 'insert into FR_ZJK_CAR_RULES values('''||CAR_ID||''','''||FACTORY_NAME||''')' from ZJK.FR_ZJK_CAR_RULES
+
+2025-06-18 10:14:04.005 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-18 10:14:04.555 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-18 10:14:05.042 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-18 10:14:12.342 | INFO     | MyThread:run:163 - 执行sql：
+SELECT rcci.NAME relyCompanyName,
+                   rcci.credit_code relyCompanyCreditCode,rcci.car_purpose,
+                   case
+                          when rcci.car_purpose like '%1%' then
+                           '乘用车 '
+                          else
+                           ''
+                        end || case
+                          when rcci.car_purpose like '%2%' then
+                           '商用车'
+                          else
+                           ''
+                        end as carPurpose
+            
+              FROM ods.rely_company_cust_info rcci
+                where rcci.credit_code = '91341225MA8P6U666J'
+2025-06-18 10:14:12.897 | WARNING  | MyThread:run:199 - sql异常：(1142, "SELECT command denied to user 'biTest'@'192.168.90.197' for table 'rely_company_cust_info'")
+2025-06-18 10:14:16.522 | INFO     | MyThread:run:163 - 执行sql：
+SELECT rcci.NAME relyCompanyName,
+                   rcci.credit_code relyCompanyCreditCode,rcci.car_purpose,
+                   case
+                          when rcci.car_purpose like '%1%' then
+                           '乘用车 '
+                          else
+                           ''
+                        end || case
+                          when rcci.car_purpose like '%2%' then
+                           '商用车'
+                          else
+                           ''
+                        end as carPurpose
+            
+              FROM rely_company_cust_info rcci
+                where rcci.credit_code = '91341225MA8P6U666J'
+2025-06-18 10:24:34.023 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-18 10:24:34.023 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-18 10:24:37.176 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-18 10:24:37.289 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-18 10:24:37.416 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-18 10:24:54.396 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-18 10:25:01.541 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-18 10:27:23.970 | INFO     | MyThread:run:163 - 执行sql：
+SELECT value
+FROM nls_database_parameters
+WHERE parameter = 'NLS_CHARACTERSET';
+
+2025-06-18 15:37:30.810 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-18 15:37:31.260 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-18 15:37:31.676 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-18 15:37:37.206 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-18 15:37:43.333 | INFO     | MyThread:run:163 - 执行sql：
+select * from bi-cgrzzl-base.sys_user where 1=1
+2025-06-18 15:37:43.416 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_user where 1=1' at line 1")
+2025-06-18 15:38:11.147 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from bi-cgrzzl-base.sys_dept
+
+2025-06-18 15:38:11.243 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-base.sys_dept' at line 1")
+2025-06-18 15:38:21.174 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from `bi-cgrzzl-base`.sys_dept
+2025-06-18 15:38:32.353 | INFO     | MyThread:run:163 - 执行sql：
+
+select * from `bi-cgrzzl-base`.sys_dept order by id
+
+
+2025-06-18 15:38:37.849 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select * from `bi-cgrzzl-base`.sys_dept order by id desc
+
+2025-06-18 15:39:26.123 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'abc' from `bi-cgrzzl-base`.sys_dept limit 1 union all
+select 'zxf' from `bi-cgrzzl-base`.sys_dept limit 1 union all
+
+2025-06-18 15:39:26.246 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2")
+2025-06-18 15:39:34.483 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'abc' from `bi-cgrzzl-base`.sys_dept limit 1
+2025-06-18 15:39:42.693 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'abc' from `bi-cgrzzl-base`.sys_dept limit 1 union all
+select 'zxf' from `bi-cgrzzl-base`.sys_dept limit 1
+2025-06-18 15:39:43.272 | WARNING  | MyThread:run:199 - sql异常：(1221, 'Incorrect usage of UNION and LIMIT')
+2025-06-18 15:39:52.097 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'abc' from `bi-cgrzzl-base`.sys_dept limit 1 union
+select 'zxf' from `bi-cgrzzl-base`.sys_dept limit 1
+2025-06-18 15:39:52.852 | WARNING  | MyThread:run:199 - sql异常：(1221, 'Incorrect usage of UNION and LIMIT')
+2025-06-18 15:39:55.818 | INFO     | MyThread:run:163 - 执行sql：
+
+select 'abc' from `bi-cgrzzl-base`.sys_dept limit 1 union
+select 'zxf' from `bi-cgrzzl-base`.sys_dept
+2025-06-18 15:39:56.544 | WARNING  | MyThread:run:199 - sql异常：(1221, 'Incorrect usage of UNION and LIMIT')
+2025-06-18 15:40:17.695 | INFO     | MyThread:run:163 - 执行sql：
+
+create table bbb(
+s varchar2(10)
+)
+2025-06-18 15:40:17.780 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchar2(10)\n)' at line 2")
+2025-06-18 15:40:25.037 | INFO     | MyThread:run:163 - 执行sql：
+
+create table bbb(
+s varchar(10)
+)
+
+2025-06-18 15:40:25.622 | WARNING  | MyThread:run:199 - sql异常：(1142, "CREATE command denied to user 'biTest'@'192.168.90.197' for table 'bbb'")
+2025-06-18 15:40:46.339 | WARNING  | __main__:<module>:1332 - (2003, "Can't connect to MySQL server on '172.20.10.3' ([WinError 10061] 由于目标计算机积极拒绝，无法连接。)")
+2025-06-18 15:40:53.862 | WARNING  | __main__:timer_out:1313 - 连接超时
+2025-06-18 15:41:14.403 | WARNING  | __main__:timer_out:1313 - 连接超时
+2025-06-18 15:45:13.813 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-18 15:45:13.829 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-18 15:45:13.839 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-18 15:45:17.656 | INFO     | MyThread:run:163 - 执行sql：
+
+create table bbb(
+s varchar(10)
+)
+2025-06-18 15:45:17.680 | WARNING  | MyThread:run:199 - sql异常：(1050, "Table 'bbb' already exists")
+2025-06-18 15:45:23.970 | INFO     | MyThread:run:163 - 执行sql：
+
+drop table bbb
+2025-06-18 15:45:25.879 | INFO     | MyThread:run:163 - 执行sql：
+
+create table bbb(
+s varchar(10)
+)
+2025-06-18 15:45:54.279 | INFO     | MyThread:run:163 - 执行sql：
+
+insert into bbb values('abc');
+insert into bbb values('zxcv');
+insert into bbb values('Fasd');
+insert into bbb values('SBD');
+2025-06-18 15:45:54.289 | INFO     | MyThread:run:163 - 执行sql：
+
+insert into bbb values('abc');
+insert into bbb values('zxcv');
+insert into bbb values('Fasd');
+insert into bbb values('SBD');
+2025-06-18 15:45:54.289 | INFO     | MyThread:run:163 - 执行sql：
+
+insert into bbb values('abc');
+insert into bbb values('zxcv');
+insert into bbb values('Fasd');
+insert into bbb values('SBD');
+2025-06-18 15:45:54.296 | INFO     | MyThread:run:163 - 执行sql：
+
+insert into bbb values('abc');
+insert into bbb values('zxcv');
+insert into bbb values('Fasd');
+insert into bbb values('SBD');
+2025-06-18 15:46:01.747 | INFO     | MyThread:run:163 - 执行sql：
+
+select *from bbb 
+2025-06-18 15:46:10.463 | INFO     | MyThread:run:163 - 执行sql：
+
+select *from bbb order by s
+2025-06-18 15:46:44.838 | INFO     | MyThread:run:163 - 执行sql：
+
+select *from bbb order by s
+2025-06-18 15:47:08.177 | INFO     | MyThread:run:163 - 执行sql：
+
+insert into bbb values('0asdf');
+2025-06-18 15:47:11.065 | INFO     | MyThread:run:163 - 执行sql：
+
+select *from bbb order by s
+2025-06-18 16:09:02.050 | ERROR    | MyThread:oracle_pool:74 - Whoops!
+2025-06-18 16:09:02.050 | ERROR    | MyThread:oracle_pool:75 - Oracle Client library has already been initialized
+2025-06-18 16:09:04.548 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-18 16:09:04.621 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-18 16:09:04.723 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-18 16:09:15.486 | INFO     | MyThread:run:163 - 执行sql：
+
+select factory_name from fr_zjk_car_rules c 
+
+
+
+2025-06-18 16:10:17.460 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-18 16:10:17.509 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-18 16:10:17.651 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-18 16:10:31.231 | INFO     | MyThread:run:163 - 执行sql：
+select *
+  from fr_zjk_car_rules c
+2025-06-19 09:24:37.866 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-19 09:24:38.361 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-19 09:24:39.006 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-19 09:26:24.696 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:26:27.469 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:26:32.917 | INFO     | MyThread:run:163 - 执行sql：
+select * from bi-cgrzzl-direct-rent.personal_apply_order_contract_info where 1=1
+2025-06-19 09:26:32.996 | WARNING  | MyThread:run:199 - sql异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-cgrzzl-direct-rent.personal_apply_order_contract_info where 1=1' at line 1")
+2025-06-19 09:26:35.576 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:26:44.967 | INFO     | MyThread:run:163 - 执行sql：
+select *
+  from personal_apply_order_contract_info_lease
+2025-06-19 09:26:47.436 | INFO     | MyThread:run:163 - 执行sql：
+select *
+  from personal_apply_order_contract_info
+2025-06-19 09:27:14.039 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from personal_apply_order_contract_info
+2025-06-19 09:27:18.671 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:27:28.909 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:27:30.433 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:27:38.351 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:27:41.220 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:27:56.976 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:29:20.351 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-19 09:29:21.005 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-19 09:29:21.473 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-19 09:30:01.648 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:30:07.230 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:30:48.372 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-19 09:34:28.680 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	USERNAME
+FROM
+	ALL_USERS
+ORDER BY
+	USERNAME
+2025-06-19 09:34:28.844 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	OWNER,
+	TABLE_NAME,
+	TO_NCHAR(COMMENTS) AS COMMENTS
+FROM
+	all_tab_comments
+2025-06-19 09:34:28.972 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	owner,
+	object_type,
+	object_name
+FROM
+	all_procedures
+WHERE
+	object_tyPe IN ( 'FUNCTION', 'PROCEDURE' )
+2025-06-19 09:36:03.504 | INFO     | MyThread:run:157 - 执行sql：
+select T.TABLE_NAME,
+       T.COMMENTS,
+       T1.COLUMN_ID,
+       T1.COLUMN_NAME,
+       case
+         when T1.DATA_TYPE like '%TIMESTAMP%' then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE in ('CHAR', 'VARCHAR', 'NVARCHAR', 'VARCHAR2', 'NVARCHAR2') then
+          T1.DATA_TYPE || '(' || T1.DATA_LENGTH || ')'
+         when T1.DATA_TYPE in ('DATE', 'LONG', 'BLOB', 'CLOB') then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is null then
+          T1.DATA_TYPE
+         when T1.DATA_TYPE = 'NUMBER' and T1.DATA_PRECISION is not null then
+          T1.DATA_TYPE || '(' || T1.DATA_PRECISION || ',' || T1.DATA_SCALE || ')'
+         else
+          T1.DATA_TYPE
+       end as DATA_TYPE,
+       T2.COMMENTS
+  from ALL_TAB_COMMENTS T
+  left join ALL_TAB_COLUMNS T1
+    on T1.OWNER = :DATABASE_NAME
+   and T1.TABLE_NAME = :TABLE_NAME
+  left join ALL_COL_COMMENTS T2
+    on T2.OWNER = :DATABASE_NAME
+   and T2.TABLE_NAME = :TABLE_NAME
+   and T1.COLUMN_NAME = T2.COLUMN_NAME
+ where T.OWNER = :DATABASE_NAME
+   and T.TABLE_NAME = :TABLE_NAME
+ order by T1.COLUMN_ID
+2025-06-19 09:36:09.500 | INFO     | MyThread:run:163 - 执行sql：
+select * from ODS.PER_APPLY_ORDER_CONTRACT_INFO where 1=1
+2025-06-19 09:41:02.363 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-19 09:41:02.951 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-19 09:41:04.279 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-19 09:41:11.478 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from personal_apply_order_cont_info
+2025-06-19 09:41:11.597 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cont_info' doesn't exist")
+2025-06-19 09:41:30.345 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select count(1) from `bi-cgrzzl-direct-rent`.personal_apply_order_cont_info_lease
+
+2025-06-19 09:41:30.478 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cont_info_lease' doesn't exist")
+2025-06-19 09:41:38.405 | INFO     | MyThread:run:163 - 执行sql：
+
+
+select count(1) from `bi-cgrzzl-direct-rent`.personal_apply_order_cont_info
+2025-06-19 09:41:38.555 | WARNING  | MyThread:run:199 - sql异常：(1146, "Table 'bi-cgrzzl-direct-rent.personal_apply_order_cont_info' doesn't exist")
+2025-06-19 09:42:09.360 | INFO     | MyThread:run:163 - 执行sql：
+
+select count(1) from `bi-cgrzzl-direct-rent`.personal_apply_order_contract_info
+
+2025-06-19 14:31:26.425 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-19 14:31:26.926 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-19 14:31:27.521 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-19 14:31:38.994 | INFO     | MyThread:run:163 - 执行sql：
+select * from personal_apply_order_hang_car car where car.id='aecb96867dd42f3c6b3cb3aa8eaccae6'
+
