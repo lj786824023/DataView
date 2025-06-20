@@ -2,3 +2,8 @@
 set @s1='abc';
 
 select @s1
+
+
+
+select *from etl.datamapping where lower(t_tab_eng_name)=lower('T03_LOAN_CONTR_H') order by cast(seq_num as decimal) 
+select *from etl.datamapping where lower(t_tab_eng_name)=lower('T03_LOAN_CONTR_H') order by cast(seq_num as int) 

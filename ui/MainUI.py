@@ -287,6 +287,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.btn_mapping)
 
+        self.btn_load_mapping = DropDownPushButton(self.widget_1_2)
+        self.btn_load_mapping.setObjectName(u"btn_load_mapping")
+
+        self.horizontalLayout_15.addWidget(self.btn_load_mapping)
+
+        self.btn_upload_mapping = DropDownPushButton(self.widget_1_2)
+        self.btn_upload_mapping.setObjectName(u"btn_upload_mapping")
+
+        self.horizontalLayout_15.addWidget(self.btn_upload_mapping)
+
         self.btn_trans = DropDownPushButton(self.widget_1_2)
         self.btn_trans.setObjectName(u"btn_trans")
         sizePolicy.setHeightForWidth(self.btn_trans.sizePolicy().hasHeightForWidth())
@@ -1981,6 +1991,8 @@ class Ui_MainWindow(object):
         self.btn_reset.setText(QCoreApplication.translate("MainWindow", u"\u91cd\u7f6e\u6761\u4ef6", None))
         self.cbx_is_sensitive.setText(QCoreApplication.translate("MainWindow", u"\u533a\u5206\u5927\u5c0f\u5199", None))
         self.btn_mapping.setText(QCoreApplication.translate("MainWindow", u"\u5bfc\u51faMAPPING", None))
+        self.btn_load_mapping.setText(QCoreApplication.translate("MainWindow", u"\u8bfb\u53d6MAPPING", None))
+        self.btn_upload_mapping.setText(QCoreApplication.translate("MainWindow", u"\u5199\u5165MAPPING", None))
         self.btn_trans.setText(QCoreApplication.translate("MainWindow", u"\u7ed3\u6784\u8f6c\u6362", None))
         self.btn_trans_setting.setText(QCoreApplication.translate("MainWindow", u"\u8f6c\u6362\u914d\u7f6e", None))
         self.lab_table_comment.setText(QCoreApplication.translate("MainWindow", u"\u8868\u540d\uff08\u6ce8\u91ca\uff09", None))

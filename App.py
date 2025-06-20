@@ -606,6 +606,44 @@ class MyMainWindow(QMainWindow):
         self.thread_table.sign_err.connect(lambda: self.ipr_column.deleteLater())
         self.thread_table.start()
 
+    def get_datamapping(self):
+        """查询datamapping"""
+        if not self.myUI.tbw_table.currentItem():
+            self.createInfoInfoBar("未选中表")
+            return
+        if self.db_info["type"].lower() not in ('mysql', 'gbase'):
+            self.createInfoInfoBar("只能在mysql、gbase数据库中使用该功能")
+            return
+
+        database_name = re.findall(r"[a-zA-Z_]+", self.sender().text())[0]
+        # return T03_LOAN_CONTR_H
+        self.myUI.btn_get_data.setEnabled(False)
+        self.myUI.tbw_column.tbw_table.setRowCount(0)
+        self.myUI.tbw_column.tbw_table.setColumnCount(0)
+        self.ipr_column = IndeterminateProgressRing(self.myUI.tbw_column)
+        self.ipr_column.move((self.myUI.tbw_column.width() - self.ipr_column.width()) / 2,
+                             (self.myUI.tbw_column.height() - self.ipr_column.height()) / 2)
+        self.ipr_column.show()
+
+        item = self.myUI.tbw_table.currentItem()
+        # database_name = self.myUI.tbw_table.item(item.row(), 0).text()
+        table_name = self.myUI.tbw_table.item(item.row(), 1).text()
+        table_comment = self.myUI.tbw_table.item(item.row(), 2).text()
+        self.myUI.lab_table_comment.setText(f"{table_name}（{table_comment}）")  # 设置表显示状态
+
+        sql = f"select * from {database_name}.datamapping where lower(t_tab_eng_name)=lower('{table_name}') order by cast(seq_num as decimal)"
+        row = 10000
+        self.thread_table = DBQueryThread(self.thread_pool.get_connection(),
+                                          sql=sql,
+                                          row_max=row,
+                                          obj=self.myUI.btn_get_data.objectName())
+        self.thread_table.sign_end.connect(self.get_db_result)
+        self.thread_table.sign_end.connect(lambda: self.ipr_column.deleteLater())
+        self.thread_table.sign_err.connect(lambda: self.ipr_column.deleteLater())
+        self.thread_table.sign_err.connect(lambda: self.myUI.btn_get_data.setEnabled(True))
+        self.thread_table.sign_err.connect(self.createErrorInfoBar)
+        self.thread_table.start()
+
     def get_db_result(self, obj: str, result: dict):
         """查询数据库结果，获取结果"""
         if obj == "get_schemas":  # 获取schema
@@ -1059,6 +1097,29 @@ class MyMainWindow(QMainWindow):
         self.myUI.icon_col_trans.setIcon(FluentIcon.APPLICATION)
         self.myUI.icon_similarity.setIcon(FluentIcon.APPLICATION)
 
+        # 读取MAPPING的MENU
+        self.menu_load_database = RoundMenu(parent=self)  # 菜单
+        self.action_load_etl = Action('从etl库', self)  # 动作etl
+        self.action_load_etl.triggered.connect(self.get_datamapping)  # 动作绑定函数
+        self.action_load_etl_bl = Action('从etl_bl库', self)  # 动作etl_bl
+        self.action_load_etl_bl.triggered.connect(self.get_datamapping)  # 动作绑定函数
+        self.menu_load_database.addAction(self.action_load_etl)  # 动作插入到菜单
+        self.menu_load_database.addAction(self.action_load_etl_bl)  # 动作插入到菜单
+        self.myUI.btn_load_mapping.setMenu(self.menu_load_database)  # 按钮设置菜单
+
+        # 写入MAPPING的MENU
+        self.menu_upload_database = RoundMenu(parent=self)
+        self.action_upload_etl = Action('到etl库', self)
+        self.action_upload_etl.triggered.connect(self.update_datamapping)
+        self.action_upload_etl_bl = Action('到etl_bl库', self)
+        self.action_upload_etl_bl.triggered.connect(self.update_datamapping)
+        self.menu_upload_database.addAction(self.action_upload_etl)
+        self.menu_upload_database.addAction(self.action_upload_etl_bl)
+        # self.copy_action.triggered.connect(self.copy_selection)
+        self.myUI.btn_upload_mapping.setMenu(self.menu_upload_database)
+
+        # self.dropDownPushButton1.setMenu(self.menu)
+
         # 窗口左上角
         self.setGeometry(0, 0, 1000, 600)
 
@@ -1315,6 +1376,47 @@ class MyMainWindow(QMainWindow):
             thread.wait()
         # 定时器正常停止
         # self.createInfoInfoBar("定时器正常停止")
+
+    def update_datamapping(self):
+        """ 同步datamapping到数据库 """
+        if not self.myUI.tbw_table.currentItem():
+            self.createInfoInfoBar("未选中表")
+            return
+        if self.myUI.tbw_column.tbw_table.rowCount() == 0:  # 如果没有数据则不操作
+            self.createInfoInfoBar("无数据")
+            return
+        database_name = re.findall(r"[a-zA-Z_]+", self.sender().text())[0]
+        item = self.myUI.tbw_table.currentItem()
+        table_name = self.myUI.tbw_table.item(item.row(), 1).text()
+        sql = f"delete from {database_name}.datamapping where lower(t_tab_eng_name)=lower('{table_name}')"
+        self.thread_table = DBQueryThread(self.connection_sql_3, sql=sql)
+        self.thread_table.sign_end.connect(
+            self.createSuccessInfoBar(f"已从{database_name}.datamapping删除{table_name}映射"))
+        self.thread_table.sign_err.connect(self.createErrorInfoBar)
+        self.thread_table.start()
+        self.thread_table.wait()
+
+        # 拼接sql
+        values = ""
+        # for row in range(5): # 测试用
+        for row in range(self.myUI.tbw_column.tbw_table.rowCount()):
+            value = '('
+            for col in range(self.myUI.tbw_column.tbw_table.columnCount()):
+                item = self.myUI.tbw_column.tbw_table.item(row, col)
+                text = item.text().replace("'", "''") if item else ''
+                value += f"'{text}',"
+            value = value[:-1] + '),'
+            values += value
+        values = values[:-1]
+
+        sql = f"insert into {database_name}.datamapping values{values}"
+
+        # 插入映射
+        self.thread_table = DBQueryThread(self.connection_sql_3, sql=sql)
+        self.thread_table.sign_end.connect(
+            self.createInfoInfoBar(f"已同步{table_name}映射到{database_name}.datamapping"))
+        self.thread_table.start()
+        self.thread_table.wait()
 
 
 if __name__ == "__main__":

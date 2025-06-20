@@ -487,6 +487,20 @@ QTableWidget::item:selected {
                </widget>
               </item>
               <item>
+               <widget class="DropDownPushButton" name="btn_load_mapping">
+                <property name="text">
+                 <string>读取MAPPING</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="DropDownPushButton" name="btn_upload_mapping">
+                <property name="text">
+                 <string>写入MAPPING</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="DropDownPushButton" name="btn_trans">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
