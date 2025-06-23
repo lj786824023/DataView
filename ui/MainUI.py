@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1178, 696)
+        MainWindow.resize(1285, 696)
         MainWindow.setStyleSheet(u"QMainWindow {\n"
 "     background-color: rgb(237, 246, 248); /* rgb(240, 244, 249)(237, 246, 248) */\n"
 " }")
@@ -279,11 +279,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer_7)
 
-        self.btn_mapping = PushButton(self.widget_1_2)
+        self.btn_mapping = DropDownPushButton(self.widget_1_2)
         self.btn_mapping.setObjectName(u"btn_mapping")
-        sizePolicy.setHeightForWidth(self.btn_mapping.sizePolicy().hasHeightForWidth())
-        self.btn_mapping.setSizePolicy(sizePolicy)
-        self.btn_mapping.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_15.addWidget(self.btn_mapping)
 

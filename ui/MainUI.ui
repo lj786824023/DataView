@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1178</width>
+    <width>1285</width>
     <height>696</height>
    </rect>
   </property>
@@ -468,19 +468,7 @@ QTableWidget::item:selected {
                </spacer>
               </item>
               <item>
-               <widget class="PushButton" name="btn_mapping">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>100</width>
-                  <height>0</height>
-                 </size>
-                </property>
+               <widget class="DropDownPushButton" name="btn_mapping">
                 <property name="text">
                  <string>导出MAPPING</string>
                 </property>

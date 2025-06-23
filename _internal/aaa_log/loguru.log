@@ -7558,3 +7558,353 @@ insert into etl.datamapping values('1','t03_loan_contr_h','贷款合同历史','
 where BA.SerialNo=BAP.RelativeSerialNo
 and BAP.SerialNo=BC.RelativeSerialNo and bc.businesstype<>''11103080''--排除捷E贷
 二、per_online_app ba,business_contract bc where BA.SerialNo=BC.RelativeSerialNo and bc.businesstype=''11103080''--排除捷E贷,本次per_online_app ba原表不抽取。','','1','','','COALESCE(BA.SerialNo,'''')','','','','','','','','','','2024-08-15 14:58:08.000'),('4','t03_loan_contr_h','贷款合同历史','Cust_Id','客户编号','VARCHAR(180)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','CUSTOMERID','客户编号','VARCHAR(180)','','','','1','','','COALESCE(C.MFCUSTOMERID,D.MFCUSTOMERID,''@''||A.CUSTOMERID,''@'')','','Y','','${AUTO_ODS}.NCM_CUSTOMER_INFO D','LEFT JOIN','ON A.CUSTOMERID = D.CUSTOMERID AND D.SDATE = ${TX_DATE_8}','','','','2024-08-15 14:58:07.000'),('5','t03_loan_contr_h','贷款合同历史','Prod_Id','产品编号','VARCHAR(30)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','BUSINESSTYPE','业务品种','VARCHAR(90)','','NCM||BUSINESSTYPE','','1','','','''NCM''||COALESCE(TRIM(A.BUSINESSTYPE),'''')','','Y','','${AUTO_ODS}.NCM_CUSTOMER_INFO C','LEFT JOIN','ON A.CUSTOMERID = C.MFCUSTOMERID AND C.SDATE = ${TX_DATE_8}','','','','2024-08-15 14:58:02.000')
+2025-06-23 09:00:07.169 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 09:00:07.199 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 09:00:07.201 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 09:00:18.162 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 09:00:18.181 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 09:00:18.182 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 09:00:32.000 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 09:00:34.147 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where lower(t_tab_eng_name)=lower('T03_LOAN_CONTR_H') order by cast(seq_num as decimal)
+2025-06-23 09:00:43.922 | INFO     | __main__:update_datamapping:1418 - delete from etl.datamapping where (seq_num='1' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='2' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='3' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='4' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='5' and t_tab_eng_name='t03_loan_contr_h')
+2025-06-23 09:00:43.998 | INFO     | __main__:update_datamapping:1420 - insert into etl.datamapping values('1','t03_loan_contr_h','贷款合同历史','123','协议编号','VARCHAR(80)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','SERIALNO','协议编号','VARCHAR(80)','','''NCM''||SERIALNO','','1','','','''NCM''||COALESCE(TRIM(A.SERIALNO),'''')','','Y','','${AUTO_ODS}.NCM_BUSINESS_APPROVE BAP','LEFT JOIN','ON A.RelativeSerialNo=BAP.SerialNo AND BAP.SDATE=${TX_DATE_8}','nvl(A.BUSINESSTYPE,''A'') <> ''11103080'' AND A.SDATE=${TX_DATE_8}','','','2024-08-15 14:58:01.000'),('2','t03_loan_contr_h','贷款合同历史','456','源系统合同编号','VARCHAR(360)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','SERIALNO','合同编号','VARCHAR(180)','','','','1','','','COALESCE(A.SERIALNO,'''')','','Y','','${AUTO_ODS}.NCM_BUSINESS_APPLY BA','LEFT JOIN','ON BAP.RelativeSerialNo=BA.SerialNo AND BA.SDATE=${TX_DATE_8}','','','','2024-08-15 14:58:06.000'),('3','t03_loan_contr_h','贷款合同历史','Appl_Id','申请编号','VARCHAR(180)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','BA.SerialNo','申请编号','VARCHAR(180)','','一、BUSINESS_APPLY ba,BUSINESS_APPROVE bap,BUSINESS_contact bc
+where BA.SerialNo=BAP.RelativeSerialNo
+and BAP.SerialNo=BC.RelativeSerialNo and bc.businesstype<>''11103080''--排除捷E贷
+二、per_online_app ba,business_contract bc where BA.SerialNo=BC.RelativeSerialNo and bc.businesstype=''11103080''--排除捷E贷,本次per_online_app ba原表不抽取。','','1','','','COALESCE(BA.SerialNo,'''')','','','','','','','','','','2024-08-15 14:58:08.000'),('4','t03_loan_contr_h','贷款合同历史','Cust_Id','客户编号','VARCHAR(180)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','CUSTOMERID','客户编号','VARCHAR(180)','','','','1','','','COALESCE(C.MFCUSTOMERID,D.MFCUSTOMERID,''@''||A.CUSTOMERID,''@'')','','Y','','${AUTO_ODS}.NCM_CUSTOMER_INFO D','LEFT JOIN','ON A.CUSTOMERID = D.CUSTOMERID AND D.SDATE = ${TX_DATE_8}','','','','2024-08-15 14:58:07.000'),('5','t03_loan_contr_h','贷款合同历史','Prod_Id','产品编号','VARCHAR(30)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','BUSINESSTYPE','业务品种','VARCHAR(90)','','NCM||BUSINESSTYPE','','1','','','''NCM''||COALESCE(TRIM(A.BUSINESSTYPE),'''')','','Y','','${AUTO_ODS}.NCM_CUSTOMER_INFO C','LEFT JOIN','ON A.CUSTOMERID = C.MFCUSTOMERID AND C.SDATE = ${TX_DATE_8}','','','','2024-08-15 14:58:02.000')
+2025-06-23 09:00:47.861 | INFO     | __main__:update_datamapping:1418 - delete from etl_bl.datamapping where (seq_num='1' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='2' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='3' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='4' and t_tab_eng_name='t03_loan_contr_h') or (seq_num='5' and t_tab_eng_name='t03_loan_contr_h')
+2025-06-23 09:00:47.870 | ERROR    | __main__:update_datamapping:1425 - sql异常(1049, "Unknown database 'etl_bl'")
+2025-06-23 09:01:07.460 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 09:01:23.151 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where 1=1 and upper(t_tab_eng_name) like upper('t03_loan_contr_h')
+2025-06-23 09:01:36.998 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where 1=1 and upper(t_tab_eng_name) like upper('t03_loan_contr_h') and upper(t_col_eng_name) like upper('Appl_Id')
+2025-06-23 09:01:41.471 | INFO     | __main__:update_datamapping:1418 - delete from etl.datamapping where (seq_num='3' and t_tab_eng_name='t03_loan_contr_h')
+2025-06-23 09:01:41.539 | INFO     | __main__:update_datamapping:1420 - insert into etl.datamapping values('3','t03_loan_contr_h','贷款合同历史','Appl_Id','申请编号1','VARCHAR(180)','','','','1','NCM','${AUTO_ODS}.NCM_BUSINESS_CONTRACT','信贷合同','BA.SerialNo','申请编号','VARCHAR(180)','','一、BUSINESS_APPLY ba,BUSINESS_APPROVE bap,BUSINESS_contact bc
+where BA.SerialNo=BAP.RelativeSerialNo
+and BAP.SerialNo=BC.RelativeSerialNo and bc.businesstype<>''11103080''--排除捷E贷
+二、per_online_app ba,business_contract bc where BA.SerialNo=BC.RelativeSerialNo and bc.businesstype=''11103080''--排除捷E贷,本次per_online_app ba原表不抽取。','','1','','','COALESCE(BA.SerialNo,'''')','','','','','','','','','','2024-08-15 14:58:08.000')
+2025-06-23 09:01:44.609 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where 1=1 and upper(t_tab_eng_name) like upper('t03_loan_contr_h')
+2025-06-23 14:33:09.463 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 14:33:09.478 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 14:33:09.494 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 14:33:13.612 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 14:50:29.976 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 14:50:29.977 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 14:50:29.978 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 14:50:32.656 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 14:51:52.127 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 14:51:52.151 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 14:51:52.155 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 14:51:55.650 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 14:51:59.310 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where lower(t_tab_eng_name)=lower('T03_LOAN_CONTR_H') order by cast(seq_num as decimal)
+2025-06-23 14:52:37.887 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-06-23 14:52:37.895 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-06-23 14:52:37.912 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-06-23 14:52:43.178 | INFO     | MyThread:run:157 - 执行sql：
+SELECT
+	table_name,
+	table_comment,
+	ordinal_position,
+	column_name,
+	column_type,
+	column_comment
+FROM
+	(
+	SELECT
+		table_name,
+		table_comment
+	FROM
+		information_schema.TABLES
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t
+	LEFT JOIN (
+	SELECT
+		ordinal_position,
+		column_name,
+		column_type,
+		column_comment
+	FROM
+		information_schema.COLUMNS
+	WHERE
+		table_schema = %(DATABASE_NAME)s
+		AND table_name = %(TABLE_NAME)s
+	) t1 ON 1 = 1
+ORDER BY
+	ordinal_position
+2025-06-23 14:53:07.347 | INFO     | MyThread:run:163 - 执行sql：
+select * from etl.datamapping where lower(t_tab_eng_name)=lower('T03_LOAN_CONTR_H') order by cast(seq_num as decimal)
+2025-06-23 14:54:04.168 | ERROR    | __main__:export_mapping:510 - 异常{e}
+2025-06-23 14:54:14.498 | ERROR    | __main__:export_mapping:510 - 异常{e}

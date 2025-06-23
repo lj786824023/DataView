@@ -92,7 +92,7 @@ class MyMainWindow(QMainWindow):
         self.myUI.btn_sql_execute_1.clicked.connect(self.execute_sql_body_1)  # sql执行按钮点击
         self.myUI.btn_sql_execute_2.clicked.connect(self.execute_sql_body_2)  # sql执行按钮点击
         self.myUI.btn_sql_execute_3.clicked.connect(self.execute_sql_body_3)  # sql执行按钮点击
-        self.myUI.btn_mapping.clicked.connect(self.export_mapping)  # mapping导出
+        # self.myUI.btn_mapping.clicked.connect(self.export_mapping)  # mapping导出
         self.myUI.tbw_column.btn_export.clicked.connect(
             lambda: self.export_excel(self.myUI.tbw_column.tbw_table))  # excel导出
         self.myUI.tbw_sql_result_1.btn_export.clicked.connect(
@@ -264,7 +264,7 @@ class MyMainWindow(QMainWindow):
             orient=Qt.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
-            duration=2000,
+            duration=3000,
             parent=self
         )
         # w.addWidget(PushButton('Action'))
@@ -277,7 +277,7 @@ class MyMainWindow(QMainWindow):
             orient=Qt.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
-            duration=2000,
+            duration=3000,
             parent=self
         )
         # w.addWidget(PushButton('Action'))
@@ -291,7 +291,7 @@ class MyMainWindow(QMainWindow):
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
             # position='Custom',   # NOTE: use custom info bar manager
-            duration=2000,
+            duration=3000,
             parent=self
         )
 
@@ -466,6 +466,12 @@ class MyMainWindow(QMainWindow):
         if False:
             self.createInfoInfoBar("无mapping表")
             return
+
+        #
+        database_name = re.findall(r"[a-zA-Z_]+", self.sender().text())[0]
+        item = self.myUI.tbw_table.currentItem()
+        table_name = self.myUI.tbw_table.item(item.row(), 1).text()
+
         # 获取文件名
         file_name, _ = QFileDialog.getSaveFileName(None,
                                                    "Save File",
@@ -474,33 +480,39 @@ class MyMainWindow(QMainWindow):
         if not file_name:
             self.createInfoInfoBar("取消导出")
             return
-        #
+
         # tx = self.myUI.tbw_table.currentItem.text()
-        row = self.myUI.tbw_table.currentRow()
-        database = self.myUI.tbw_table.item(row, 0).text()
-        database = "etl_bl"
-        table = self.myUI.tbw_table.item(row, 1).text()
-        sql_1 = f"select * from {database}.datamapping_task where lower(t_tab_eng_name)=lower('{table}')"
-        sql_2 = f"select * from {database}.datamapping where lower(t_tab_eng_name)=lower('{table}') order by seq_num"
+        # row = self.myUI.tbw_table.currentRow()
+        # database = self.myUI.tbw_table.item(row, 0).text()
+        # database = "etl_bl"
+        # table = self.myUI.tbw_table.item(row, 1).text()
+        sql_1 = f"select * from {database_name}.datamapping_task where lower(t_tab_eng_name)=lower('{table_name}')"
+        sql_2 = f"select * from {database_name}.datamapping where lower(t_tab_eng_name)=lower('{table_name}') order by cast(seq_num as decimal)"
         connection = self.thread_pool.get_connection()
         cursor = connection.cursor()
-        cursor.execute(sql_1)
-        data1 = cursor.fetchall()  # datamapping_task
-        cursor.execute(sql_2)
-        data2 = cursor.fetchall()  # datamapping
-        cursor.close()
-        connection.close()
-        # os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/db_config.ini"
-        wb = load_workbook(os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/mapping.xlsx")
-        ws = wb.worksheets[0]  # 获取第一个工作表
-        ws.delete_rows(idx=2, amount=100)
-        ws.append(data1[0])
-        ws = wb.worksheets[1]
-        ws.delete_rows(idx=4, amount=1000)  # 从第4行开始删除1000行
-        for row in data2:
-            ws.append(row)
-        wb.save(file_name)
-        self.createSuccessInfoBar(f"导出成功\n{file_name}")
+        try:
+            cursor.execute(sql_1)
+            data1 = cursor.fetchall()  # datamapping_task
+            cursor.execute(sql_2)
+            data2 = cursor.fetchall()  # datamapping
+            # os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/db_config.ini"
+            wb = load_workbook(os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/mapping.xlsx")
+            ws = wb.worksheets[0]  # 获取第一个工作表
+            ws.delete_rows(idx=2, amount=100)
+            ws.append(data1[0])
+            ws = wb.worksheets[1]
+            ws.delete_rows(idx=4, amount=1000)  # 从第4行开始删除1000行
+            for row in data2:
+                ws.append(row)
+            wb.save(file_name)
+            self.createSuccessInfoBar(f"导出成功\n{file_name}")
+        except Exception as e:
+            logger.error("异常{e}")
+            self.createErrorInfoBar(f"异常{e}")
+        finally:
+            cursor.close()
+            connection.close()
+
 
     def find_procedures(self):
         """筛选过程清单"""
@@ -1097,6 +1109,16 @@ class MyMainWindow(QMainWindow):
         self.myUI.icon_col_trans.setIcon(FluentIcon.APPLICATION)
         self.myUI.icon_similarity.setIcon(FluentIcon.APPLICATION)
 
+        # 导出MAPPING的MENU
+        self.menu_export_database = RoundMenu(parent=self)  # 菜单
+        self.action_export_etl = Action('从etl库', self)  # 动作etl
+        self.action_export_etl.triggered.connect(self.export_mapping)  # 动作绑定函数
+        self.action_export_etl_bl = Action('从etl_bl库', self)  # 动作etl_bl
+        self.action_export_etl_bl.triggered.connect(self.export_mapping)  # 动作绑定函数
+        self.menu_export_database.addAction(self.action_export_etl)  # 动作插入到菜单
+        self.menu_export_database.addAction(self.action_export_etl_bl)  # 动作插入到菜单
+        self.myUI.btn_mapping.setMenu(self.menu_export_database)  # 按钮设置菜单
+
         # 读取MAPPING的MENU
         self.menu_load_database = RoundMenu(parent=self)  # 菜单
         self.action_load_etl = Action('从etl库', self)  # 动作etl
@@ -1388,15 +1410,10 @@ class MyMainWindow(QMainWindow):
         database_name = re.findall(r"[a-zA-Z_]+", self.sender().text())[0]
         item = self.myUI.tbw_table.currentItem()
         table_name = self.myUI.tbw_table.item(item.row(), 1).text()
-        sql = f"delete from {database_name}.datamapping where lower(t_tab_eng_name)=lower('{table_name}')"
-        self.thread_table = DBQueryThread(self.connection_sql_3, sql=sql)
-        self.thread_table.sign_end.connect(
-            self.createSuccessInfoBar(f"已从{database_name}.datamapping删除{table_name}映射"))
-        self.thread_table.sign_err.connect(self.createErrorInfoBar)
-        self.thread_table.start()
-        self.thread_table.wait()
 
         # 拼接sql
+        # delete from etl.datamapping where (seq_num='1' and t_tab_eng_name='tab') or (seq_num='1' and t_tab_eng_name='tab')
+        sql_delete = f"delete from {database_name}.datamapping where "
         values = ""
         # for row in range(5): # 测试用
         for row in range(self.myUI.tbw_column.tbw_table.rowCount()):
@@ -1407,16 +1424,30 @@ class MyMainWindow(QMainWindow):
                 value += f"'{text}',"
             value = value[:-1] + '),'
             values += value
-        values = values[:-1]
 
+            sql_delete += f"(seq_num='{self.myUI.tbw_column.tbw_table.item(row, 0).text()}' and t_tab_eng_name='{self.myUI.tbw_column.tbw_table.item(row, 1).text()}') or " # delete sql
+
+        values = values[:-1] # 去掉结尾的,
+        sql_delete = sql_delete[:-4] # 去掉结尾的 or
         sql = f"insert into {database_name}.datamapping values{values}"
 
-        # 插入映射
-        self.thread_table = DBQueryThread(self.connection_sql_3, sql=sql)
-        self.thread_table.sign_end.connect(
-            self.createInfoInfoBar(f"已同步{table_name}映射到{database_name}.datamapping"))
-        self.thread_table.start()
-        self.thread_table.wait()
+        connection = self.thread_pool.get_connection()
+        cursor = connection.cursor()
+        try:
+
+            # cursor.execute(sql) # 1.尝试插入，确保能插入
+            # cursor.execute(f"delete from {database_name}.datamapping where lower(t_tab_eng_name)=lower('{table_name}')") # 2.delete
+            logger.info(sql_delete)
+            cursor.execute(sql_delete) # 2.delete
+            logger.info(sql)
+            cursor.execute(sql)  # 3.insert
+            connection.commit() # 提交
+            self.createSuccessInfoBar(f"已同步到{database_name}.datamapping")
+        except Exception as e:
+            logger.error(f"sql异常{e}")
+            self.createErrorInfoBar(f"sql异常{e}")
+        finally:
+            connection.close()
 
 
 if __name__ == "__main__":
