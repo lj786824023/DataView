@@ -24,6 +24,7 @@
 #   -i 指定图片，生成应用程序图标
 #     pyinstaller -F -i C:\Users\lojn\PycharmProjects\tool\img\app.ico App.py -n app
 #     pyinstaller -D -w -i C:\Users\lojn\PycharmProjects\tool\img\App.ico App.py -n app
+#   --add-data abc/*:def  将abc文件内的所有内容放到打包文件里的def文件夹内(_internal/def)
 #
 # 5.日常打包
 #   pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\App.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
