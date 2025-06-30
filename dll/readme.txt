@@ -27,8 +27,8 @@
 #   --add-data abc/*:def  将abc文件内的所有内容放到打包文件里的def文件夹内(_internal/def)
 #
 # 5.日常打包
-#   pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\App.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
-#   pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\App.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py
+#   pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\weixinshoucang.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
+#   pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\weixinshoucang.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py
 #   修改app.spec
 #   删除app
 #   pyinstaller app.spec

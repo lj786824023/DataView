@@ -1017,6 +1017,7 @@ class MyMainWindow(QMainWindow):
         self.myUI.segw_sql_3.addItem("tab_sql_3_log", "执行日志")
         self.myUI.segw_sql_3.setCurrentItem("tab_sql_3_result")
         self.myUI.segw_sql_3.currentItemChanged.connect(
+
             lambda k: self.myUI.staw_sql_3.setCurrentWidget(self.findChild(QWidget, k)))
 
         # 设置窗口图标
@@ -1455,6 +1456,10 @@ class MyMainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+
+    # pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\weixinshoucang.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
+
+
     # 环境变量 dpi
     cf = ConfigFile(os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/environ.ini", "utf=8")  # 配置文件路径：当前
     qt_font_dpi = cf.read()["environment"]["qt_font_dpi"]
