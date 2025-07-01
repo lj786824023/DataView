@@ -195,7 +195,7 @@
              <number>9</number>
             </property>
             <item>
-             <widget class="ComboBox" name="cbb_database">
+             <widget class="EditableComboBox" name="cbb_database">
               <property name="maxVisibleItems">
                <number>20</number>
               </property>
@@ -3394,6 +3394,11 @@ border : 0px;
   <customwidget>
    <class>DropDownPushButton</class>
    <extends>QPushButton</extends>
+   <header location="global">qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>EditableComboBox</class>
+   <extends>QComboBox</extends>
    <header location="global">qfluentwidgets</header>
   </customwidget>
  </customwidgets>

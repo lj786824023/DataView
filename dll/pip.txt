@@ -20,12 +20,14 @@ pip install -i https://mirrors.aliyun.com/pypi/simple PySide6-Fluent-Widgets[ful
 pip install -i https://mirrors.aliyun.com/pypi/simple DBUtils
 pip install -i https://mirrors.aliyun.com/pypi/simple loguru
 DBUtils
+pip install "PySide6-Fluent-Widgets[full]" -i https://pypi.org/simple/
 
 python3.8 -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple
 -- 更新
 pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade sip
 pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade pyqt5
 pip install -i https://mirrors.aliyun.com/pypi/simple --upgrade pip
+pip install -i https://pypi.org/simple/ --upgrade "PySide6-Fluent-Widgets[full]"
 
 python.exe -m pip install --upgrade pip
 

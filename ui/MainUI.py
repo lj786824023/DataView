@@ -23,10 +23,10 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFrame, QHBoxLay
 
 from MyWidget import TableWidget
 from qfluentwidgets import (BodyLabel, CaptionLabel, CheckBox, ComboBox,
-    DropDownPushButton, IconWidget, LineEdit, ListWidget,
-    PasswordLineEdit, Pivot, PrimaryPushButton, PushButton,
-    SegmentedWidget, Slider, SmoothScrollArea, StrongBodyLabel,
-    SubtitleLabel, SwitchButton, TextEdit)
+    DropDownPushButton, EditableComboBox, IconWidget, LineEdit,
+    ListWidget, PasswordLineEdit, Pivot, PrimaryPushButton,
+    PushButton, SegmentedWidget, Slider, SmoothScrollArea,
+    StrongBodyLabel, SubtitleLabel, SwitchButton, TextEdit)
 from ui.testPageTableWidget import PageTableWidget
 
 class Ui_MainWindow(object):
@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
         self.verticalLayout = QVBoxLayout(self.widget_1_1)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(9, 9, 9, 9)
-        self.cbb_database = ComboBox(self.widget_1_1)
+        self.cbb_database = EditableComboBox(self.widget_1_1)
         self.cbb_database.addItem("")
         self.cbb_database.addItem("")
         self.cbb_database.setObjectName(u"cbb_database")
