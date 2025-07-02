@@ -43,38 +43,43 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
         self.label_10 = BodyLabel(self.layoutWidget)
         self.label_10.setObjectName(u"label_10")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
         self.label_10.setSizePolicy(sizePolicy)
 
-        self.horizontalLayout_19.addWidget(self.label_10)
+        self.horizontalLayout_19.addWidget(self.label_10, 0, Qt.AlignLeft)
 
         self.btn_dir_blood = PushButton(self.layoutWidget)
         self.btn_dir_blood.setObjectName(u"btn_dir_blood")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.btn_dir_blood.sizePolicy().hasHeightForWidth())
         self.btn_dir_blood.setSizePolicy(sizePolicy1)
-        self.btn_dir_blood.setMinimumSize(QSize(100, 0))
 
-        self.horizontalLayout_19.addWidget(self.btn_dir_blood)
+        self.horizontalLayout_19.addWidget(self.btn_dir_blood, 0, Qt.AlignRight)
 
-        self.horizontalLayout_19.setStretch(0, 3)
-        self.horizontalLayout_19.setStretch(1, 1)
 
         self.verticalLayout_11.addLayout(self.horizontalLayout_19)
 
         self.edt_dir_blood = LineEdit(self.layoutWidget)
         self.edt_dir_blood.setObjectName(u"edt_dir_blood")
+        sizePolicy1.setHeightForWidth(self.edt_dir_blood.sizePolicy().hasHeightForWidth())
+        self.edt_dir_blood.setSizePolicy(sizePolicy1)
         self.edt_dir_blood.setReadOnly(True)
 
         self.verticalLayout_11.addWidget(self.edt_dir_blood)
 
         self.lsw_blood = ListWidget(self.layoutWidget)
         self.lsw_blood.setObjectName(u"lsw_blood")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Expanding)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.lsw_blood.sizePolicy().hasHeightForWidth())
+        self.lsw_blood.setSizePolicy(sizePolicy2)
+        self.lsw_blood.setMinimumSize(QSize(100, 0))
 
         self.verticalLayout_11.addWidget(self.lsw_blood)
 
@@ -92,7 +97,6 @@ class Ui_MainWindow(object):
         self.edt_file_content = TextEdit(self.layoutWidget_2)
         self.edt_file_content.setObjectName(u"edt_file_content")
         self.edt_file_content.setLineWrapMode(QTextEdit.NoWrap)
-        self.edt_file_content.setReadOnly(True)
 
         self.verticalLayout_12.addWidget(self.edt_file_content)
 
@@ -104,11 +108,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.label_9 = BodyLabel(self.layoutWidget_3)
         self.label_9.setObjectName(u"label_9")
+        sizePolicy.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy)
 
         self.verticalLayout_13.addWidget(self.label_9)
 
         self.edt_file_blood = TextEdit(self.layoutWidget_3)
         self.edt_file_blood.setObjectName(u"edt_file_blood")
+        sizePolicy2.setHeightForWidth(self.edt_file_blood.sizePolicy().hasHeightForWidth())
+        self.edt_file_blood.setSizePolicy(sizePolicy2)
+        self.edt_file_blood.setMinimumSize(QSize(100, 0))
         self.edt_file_blood.setLineWrapMode(QTextEdit.NoWrap)
         self.edt_file_blood.setReadOnly(True)
 

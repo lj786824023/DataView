@@ -9,7 +9,7 @@ import chardet
 from PySide6 import QtWidgets
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtGui import QIcon, QColor
-from PySide6.QtWidgets import QMainWindow, QMessageBox, QFileDialog, QTableWidgetItem, QTableWidget, QWidget
+from PySide6.QtWidgets import QMainWindow, QMessageBox, QFileDialog, QTableWidgetItem, QTableWidget, QWidget, QCompleter
 from openpyxl.reader.excel import load_workbook
 from openpyxl.workbook import Workbook
 from qfluentwidgets import InfoBar, InfoBarPosition, IndeterminateProgressRing, FluentIcon, ColorDialog, qconfig, \
@@ -108,9 +108,12 @@ class MyMainWindow(QMainWindow):
         self.myUI.cbb_dpi.currentTextChanged.connect(lambda: self.createSuccessInfoBar("重启后生效"))
 
         self.myUI.btn_col_trans.clicked.connect(self.ui_col_trans.show)  # 字段翻译
-        self.myUI.btn_file_blood.clicked.connect(self.ui_file_blood.show)  # 字段翻译
+        self.myUI.btn_file_blood.clicked.connect(self.ui_file_blood.show)  # 依赖解析
         self.myUI.btn_similarity.clicked.connect(self.ui_similarity.show)  # 相似度
         self.myUI.btn_update_log.clicked.connect(self.ui_update_log.show)  # 更新日志
+
+        self.myUI.cbb_database.returnPressed.disconnect()  # 禁用回车功能
+        self.myUI.cbb_find_procedure.returnPressed.disconnect()  # 禁用回车功能
 
         # 初始化部分控件
         self.init_ui()
@@ -658,13 +661,30 @@ class MyMainWindow(QMainWindow):
     def get_db_result(self, obj: str, result: dict):
         """查询数据库结果，获取结果"""
         if obj == "get_schemas":  # 获取schema
-            schemas = [line[0] for line in result["data"]]
+            schemas = [line[0].lower() for line in result["data"]]
+
             self.myUI.cbb_database.addItems(schemas)
+
+            # 创建补全器
+            items = schemas
+            completer = QCompleter(items, self.myUI.cbb_database)
+            completer.setFilterMode(Qt.MatchContains) # 允许子字符串匹配
+            completer.setCaseSensitivity(Qt.CaseInsensitive) # 不区分大小写
+            # 设置显示的选项数
+            completer.setMaxVisibleItems(10)
+            # 设置补全器
+            self.myUI.cbb_database.setCompleter(completer)
+
             self.myUI.cbb_find_procedure.addItems(schemas)
+            self.myUI.cbb_find_procedure.setCompleter(completer)
 
         if obj == "get_tables":  # 获取表清单
 
             # 加工表清单
+            for i in range(len(result["data"])):  # 库茗、表英文名小写显示
+                result["data"][i][0] = result["data"][i][0].lower()
+                result["data"][i][1] = result["data"][i][1].lower()
+
             result["data"].sort(key=itemgetter(0, 1), reverse=False)  # 结果集排序
             self.load_tablewidget(self.myUI.tbw_table, None, result["data"])
             self.tables = result["data"]
@@ -679,6 +699,10 @@ class MyMainWindow(QMainWindow):
             self.myUI.edt_ods.setText(result["data"][0][1].lower())
 
         if obj == "get_procedures":  # 获取过程清单
+            for i in range(len(result["data"])):  # 库名、类型、过程英文名小写显示
+                result["data"][i][0] = result["data"][i][0].lower()
+                result["data"][i][1] = result["data"][i][1].lower()
+                result["data"][i][2] = result["data"][i][2].lower()
             result["data"].sort(key=itemgetter(0, 1, 2), reverse=False)  # 结果集排序
             self.procedures = result["data"]
             self.load_tablewidget(self.myUI.tbw_procedure, None, self.procedures)
@@ -1043,6 +1067,16 @@ class MyMainWindow(QMainWindow):
         self.myUI.cbb_choose_db.clear()
         self.myUI.cbb_choose_db.addItems(sorted(data_dict.keys(), key=str.lower))
         self.myUI.cbb_choose_db.setCurrentIndex(-1)
+
+        # 创建补全器
+        items = data_dict_key
+        completer = QCompleter(items, self.myUI.cbb_choose_db)
+        completer.setFilterMode(Qt.MatchContains)  # 允许子字符串匹配
+        completer.setCaseSensitivity(Qt.CaseInsensitive)  # 不区分大小写
+        completer.setMaxVisibleItems(10) # 设置显示的选项数
+        self.myUI.cbb_choose_db.setCompleter(completer) # 设置补全器
+
+
         # 表、过程清单设置列宽
         self.myUI.tbw_table.setColumnWidth(0, 120)
         self.myUI.tbw_table.setColumnWidth(1, 200)
@@ -1071,6 +1105,8 @@ class MyMainWindow(QMainWindow):
 
         # 读取结构转化清单
         self.menu1 = RoundMenu(parent=self)
+        self.menu1.addAction(Action('配置'))
+        self.menu1.addAction(Action('刷新'))
         self.menu1.addAction(Action('to_oracle'))
         self.menu1.addAction(Action('to_gbase'))
         self.menu1.addAction(Action('to_dameng'))
@@ -1458,7 +1494,6 @@ class MyMainWindow(QMainWindow):
 if __name__ == "__main__":
 
     # pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\weixinshoucang.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
-
 
     # 环境变量 dpi
     cf = ConfigFile(os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/environ.ini", "utf=8")  # 配置文件路径：当前
