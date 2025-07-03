@@ -508,7 +508,8 @@ class MyMainWindow(QMainWindow):
             for row in data2:
                 ws.append(row)
             wb.save(file_name)
-            self.createSuccessInfoBar(f"导出成功\n{file_name}")
+
+            (f"导出成功\n{file_name}")
         except Exception as e:
             logger.error("异常{e}")
             self.createErrorInfoBar(f"异常{e}")

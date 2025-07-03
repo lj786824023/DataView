@@ -9537,3 +9537,28 @@ SELECT
 	routine_name
 FROM
 	information_schema.ROUTINES
+2025-07-03 17:15:18.912 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	SCHEMA_NAME
+FROM
+	INFORMATION_SCHEMA.SCHEMATA
+ORDER BY
+	SCHEMA_NAME
+2025-07-03 17:15:18.919 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	table_schema,
+	table_name,
+	table_comment 
+FROM
+	information_schema.tables
+2025-07-03 17:15:18.924 | INFO     | MyThread:run:163 - 执行sql：
+SELECT
+	routine_schema,
+	routine_type,
+	routine_name
+FROM
+	information_schema.ROUTINES
+2025-07-03 17:15:28.814 | WARNING  | __main__:timer_out:1438 - 连接超时
+2025-07-03 17:15:34.652 | WARNING  | __main__:timer_out:1438 - 连接超时
+2025-07-03 17:15:44.439 | WARNING  | __main__:timer_out:1438 - 连接超时
+2025-07-03 17:15:47.751 | WARNING  | __main__:timer_out:1438 - 连接超时
