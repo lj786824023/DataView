@@ -133,29 +133,36 @@ class Ui_Form(object):
         self.cbb_cnt.addItem("")
         self.cbb_cnt.addItem("")
         self.cbb_cnt.setObjectName(u"cbb_cnt")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.cbb_cnt.sizePolicy().hasHeightForWidth())
+        self.cbb_cnt.setSizePolicy(sizePolicy)
+        self.cbb_cnt.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.cbb_cnt)
 
         self.btn_first = PushButton(Form)
         self.btn_first.setObjectName(u"btn_first")
-        self.btn_first.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_first.sizePolicy().hasHeightForWidth())
+        self.btn_first.setSizePolicy(sizePolicy)
+        self.btn_first.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_first)
 
         self.btn_pre = PushButton(Form)
         self.btn_pre.setObjectName(u"btn_pre")
-        self.btn_pre.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_pre.sizePolicy().hasHeightForWidth())
+        self.btn_pre.setSizePolicy(sizePolicy)
+        self.btn_pre.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_pre)
 
         self.edt_cur_page = LineEdit(Form)
         self.edt_cur_page.setObjectName(u"edt_cur_page")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.edt_cur_page.sizePolicy().hasHeightForWidth())
         self.edt_cur_page.setSizePolicy(sizePolicy)
-        self.edt_cur_page.setMaximumSize(QSize(70, 16777215))
+        self.edt_cur_page.setMaximumSize(QSize(50, 16777215))
         self.edt_cur_page.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout.addWidget(self.edt_cur_page)
@@ -172,19 +179,25 @@ class Ui_Form(object):
 
         self.btn_next = PushButton(Form)
         self.btn_next.setObjectName(u"btn_next")
-        self.btn_next.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_next.sizePolicy().hasHeightForWidth())
+        self.btn_next.setSizePolicy(sizePolicy)
+        self.btn_next.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_next)
 
         self.btn_last = PushButton(Form)
         self.btn_last.setObjectName(u"btn_last")
-        self.btn_last.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_last.sizePolicy().hasHeightForWidth())
+        self.btn_last.setSizePolicy(sizePolicy)
+        self.btn_last.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_last)
 
         self.btn_jump = PushButton(Form)
         self.btn_jump.setObjectName(u"btn_jump")
-        self.btn_jump.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_jump.sizePolicy().hasHeightForWidth())
+        self.btn_jump.setSizePolicy(sizePolicy)
+        self.btn_jump.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_jump)
 
@@ -194,10 +207,20 @@ class Ui_Form(object):
 
         self.btn_export = PushButton(Form)
         self.btn_export.setObjectName(u"btn_export")
-        self.btn_export.setMinimumSize(QSize(100, 0))
+        sizePolicy.setHeightForWidth(self.btn_export.sizePolicy().hasHeightForWidth())
+        self.btn_export.setSizePolicy(sizePolicy)
+        self.btn_export.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout.addWidget(self.btn_export)
 
+        self.horizontalLayout.setStretch(0, 1)
+        self.horizontalLayout.setStretch(1, 1)
+        self.horizontalLayout.setStretch(2, 1)
+        self.horizontalLayout.setStretch(3, 1)
+        self.horizontalLayout.setStretch(6, 1)
+        self.horizontalLayout.setStretch(7, 1)
+        self.horizontalLayout.setStretch(8, 1)
+        self.horizontalLayout.setStretch(10, 1)
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 

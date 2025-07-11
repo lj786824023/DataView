@@ -3,5 +3,5 @@ SELECT
 FROM
 	all_source
 WHERE
-	owner = :DATABASE_NAME
-	AND name = :PROCEDURE_NAME
+	owner = UPPER(:DATABASE_NAME)
+	AND name = UPPER(:PROCEDURE_NAME)

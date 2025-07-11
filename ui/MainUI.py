@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_39.addWidget(self.segw_1)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer = QSpacerItem(0, 0, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_39.addItem(self.horizontalSpacer)
 
@@ -86,24 +86,28 @@ class Ui_MainWindow(object):
         self.cbb_choose_db.addItem("")
         self.cbb_choose_db.addItem("")
         self.cbb_choose_db.setObjectName(u"cbb_choose_db")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.cbb_choose_db.sizePolicy().hasHeightForWidth())
         self.cbb_choose_db.setSizePolicy(sizePolicy)
-        self.cbb_choose_db.setMinimumSize(QSize(220, 0))
+        self.cbb_choose_db.setMaximumSize(QSize(300, 16777215))
         self.cbb_choose_db.setMaxVisibleItems(20)
 
         self.horizontalLayout_21.addWidget(self.cbb_choose_db)
 
         self.btn_connect = PushButton(self.centralwidget)
         self.btn_connect.setObjectName(u"btn_connect")
-        sizePolicy.setHeightForWidth(self.btn_connect.sizePolicy().hasHeightForWidth())
-        self.btn_connect.setSizePolicy(sizePolicy)
-        self.btn_connect.setMinimumSize(QSize(120, 0))
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btn_connect.sizePolicy().hasHeightForWidth())
+        self.btn_connect.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_21.addWidget(self.btn_connect)
 
+        self.horizontalLayout_21.setStretch(0, 2)
+        self.horizontalLayout_21.setStretch(1, 1)
 
         self.horizontalLayout_39.addLayout(self.horizontalLayout_21)
 
@@ -143,22 +147,22 @@ class Ui_MainWindow(object):
         self.cbb_database.addItem("")
         self.cbb_database.addItem("")
         self.cbb_database.setObjectName(u"cbb_database")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.cbb_database.sizePolicy().hasHeightForWidth())
-        self.cbb_database.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.cbb_database.sizePolicy().hasHeightForWidth())
+        self.cbb_database.setSizePolicy(sizePolicy2)
         self.cbb_database.setMaxVisibleItems(20)
 
         self.verticalLayout.addWidget(self.cbb_database)
 
         self.edt_table = LineEdit(self.widget_1_1)
         self.edt_table.setObjectName(u"edt_table")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.edt_table.sizePolicy().hasHeightForWidth())
-        self.edt_table.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.edt_table.sizePolicy().hasHeightForWidth())
+        self.edt_table.setSizePolicy(sizePolicy3)
 
         self.verticalLayout.addWidget(self.edt_table)
 
@@ -175,11 +179,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem2.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         self.tbw_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         self.tbw_table.setObjectName(u"tbw_table")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tbw_table.sizePolicy().hasHeightForWidth())
-        self.tbw_table.setSizePolicy(sizePolicy3)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.tbw_table.sizePolicy().hasHeightForWidth())
+        self.tbw_table.setSizePolicy(sizePolicy4)
         self.tbw_table.setFocusPolicy(Qt.NoFocus)
         self.tbw_table.setStyleSheet(u"QTableWidget {\n"
 "  border: 1px solid rgb(220, 220, 220); /* \u8fb9\u6846\u5bbd\u5ea6\u3001\u6837\u5f0f\u548c\u989c\u8272 */\n"
@@ -205,48 +209,48 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setContentsMargins(9, 9, 9, 9)
         self.horizontalLayout_13 = QHBoxLayout()
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.cbb_find_col_1 = ComboBox(self.widget_1_2)
-        self.cbb_find_col_1.addItem("")
+        self.cbb_find_col_1 = EditableComboBox(self.widget_1_2)
         self.cbb_find_col_1.setObjectName(u"cbb_find_col_1")
-        sizePolicy2.setHeightForWidth(self.cbb_find_col_1.sizePolicy().hasHeightForWidth())
-        self.cbb_find_col_1.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.cbb_find_col_1.sizePolicy().hasHeightForWidth())
+        self.cbb_find_col_1.setSizePolicy(sizePolicy3)
+        self.cbb_find_col_1.setMinimumSize(QSize(120, 0))
 
         self.horizontalLayout_13.addWidget(self.cbb_find_col_1)
 
         self.edt_find_str_1 = LineEdit(self.widget_1_2)
         self.edt_find_str_1.setObjectName(u"edt_find_str_1")
-        sizePolicy2.setHeightForWidth(self.edt_find_str_1.sizePolicy().hasHeightForWidth())
-        self.edt_find_str_1.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.edt_find_str_1.sizePolicy().hasHeightForWidth())
+        self.edt_find_str_1.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_13.addWidget(self.edt_find_str_1)
 
-        self.cbb_find_col_2 = ComboBox(self.widget_1_2)
-        self.cbb_find_col_2.addItem("")
+        self.cbb_find_col_2 = EditableComboBox(self.widget_1_2)
         self.cbb_find_col_2.setObjectName(u"cbb_find_col_2")
-        sizePolicy2.setHeightForWidth(self.cbb_find_col_2.sizePolicy().hasHeightForWidth())
-        self.cbb_find_col_2.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.cbb_find_col_2.sizePolicy().hasHeightForWidth())
+        self.cbb_find_col_2.setSizePolicy(sizePolicy3)
+        self.cbb_find_col_2.setMinimumSize(QSize(120, 0))
 
         self.horizontalLayout_13.addWidget(self.cbb_find_col_2)
 
         self.edt_find_str_2 = LineEdit(self.widget_1_2)
         self.edt_find_str_2.setObjectName(u"edt_find_str_2")
-        sizePolicy2.setHeightForWidth(self.edt_find_str_2.sizePolicy().hasHeightForWidth())
-        self.edt_find_str_2.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.edt_find_str_2.sizePolicy().hasHeightForWidth())
+        self.edt_find_str_2.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_13.addWidget(self.edt_find_str_2)
 
-        self.cbb_find_col_3 = ComboBox(self.widget_1_2)
-        self.cbb_find_col_3.addItem("")
+        self.cbb_find_col_3 = EditableComboBox(self.widget_1_2)
         self.cbb_find_col_3.setObjectName(u"cbb_find_col_3")
-        sizePolicy2.setHeightForWidth(self.cbb_find_col_3.sizePolicy().hasHeightForWidth())
-        self.cbb_find_col_3.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.cbb_find_col_3.sizePolicy().hasHeightForWidth())
+        self.cbb_find_col_3.setSizePolicy(sizePolicy3)
+        self.cbb_find_col_3.setMinimumSize(QSize(120, 0))
 
         self.horizontalLayout_13.addWidget(self.cbb_find_col_3)
 
         self.edt_find_str_3 = LineEdit(self.widget_1_2)
         self.edt_find_str_3.setObjectName(u"edt_find_str_3")
-        sizePolicy2.setHeightForWidth(self.edt_find_str_3.sizePolicy().hasHeightForWidth())
-        self.edt_find_str_3.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.edt_find_str_3.sizePolicy().hasHeightForWidth())
+        self.edt_find_str_3.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_13.addWidget(self.edt_find_str_3)
 
@@ -263,8 +267,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.edt_result_row = LineEdit(self.widget_1_2)
         self.edt_result_row.setObjectName(u"edt_result_row")
-        sizePolicy2.setHeightForWidth(self.edt_result_row.sizePolicy().hasHeightForWidth())
-        self.edt_result_row.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.edt_result_row.sizePolicy().hasHeightForWidth())
+        self.edt_result_row.setSizePolicy(sizePolicy3)
         self.edt_result_row.setMaximumSize(QSize(100, 16777215))
         self.edt_result_row.setInputMethodHints(Qt.ImhNone)
 
@@ -272,24 +276,26 @@ class Ui_MainWindow(object):
 
         self.btn_get_data = PushButton(self.widget_1_2)
         self.btn_get_data.setObjectName(u"btn_get_data")
-        sizePolicy2.setHeightForWidth(self.btn_get_data.sizePolicy().hasHeightForWidth())
-        self.btn_get_data.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_get_data.sizePolicy().hasHeightForWidth())
+        self.btn_get_data.setSizePolicy(sizePolicy3)
+        self.btn_get_data.setMinimumSize(QSize(120, 0))
         self.btn_get_data.setMaximumSize(QSize(120, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_get_data)
 
         self.btn_reset = PushButton(self.widget_1_2)
         self.btn_reset.setObjectName(u"btn_reset")
-        sizePolicy2.setHeightForWidth(self.btn_reset.sizePolicy().hasHeightForWidth())
-        self.btn_reset.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_reset.sizePolicy().hasHeightForWidth())
+        self.btn_reset.setSizePolicy(sizePolicy3)
+        self.btn_reset.setMinimumSize(QSize(120, 0))
         self.btn_reset.setMaximumSize(QSize(120, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_reset)
 
         self.cbx_is_sensitive = CheckBox(self.widget_1_2)
         self.cbx_is_sensitive.setObjectName(u"cbx_is_sensitive")
-        sizePolicy2.setHeightForWidth(self.cbx_is_sensitive.sizePolicy().hasHeightForWidth())
-        self.cbx_is_sensitive.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.cbx_is_sensitive.sizePolicy().hasHeightForWidth())
+        self.cbx_is_sensitive.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_15.addWidget(self.cbx_is_sensitive)
 
@@ -299,32 +305,32 @@ class Ui_MainWindow(object):
 
         self.btn_load_mapping = DropDownPushButton(self.widget_1_2)
         self.btn_load_mapping.setObjectName(u"btn_load_mapping")
-        sizePolicy2.setHeightForWidth(self.btn_load_mapping.sizePolicy().hasHeightForWidth())
-        self.btn_load_mapping.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_load_mapping.sizePolicy().hasHeightForWidth())
+        self.btn_load_mapping.setSizePolicy(sizePolicy3)
         self.btn_load_mapping.setMaximumSize(QSize(140, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_load_mapping)
 
         self.btn_upload_mapping = DropDownPushButton(self.widget_1_2)
         self.btn_upload_mapping.setObjectName(u"btn_upload_mapping")
-        sizePolicy2.setHeightForWidth(self.btn_upload_mapping.sizePolicy().hasHeightForWidth())
-        self.btn_upload_mapping.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_upload_mapping.sizePolicy().hasHeightForWidth())
+        self.btn_upload_mapping.setSizePolicy(sizePolicy3)
         self.btn_upload_mapping.setMaximumSize(QSize(140, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_upload_mapping)
 
         self.btn_mapping = DropDownPushButton(self.widget_1_2)
         self.btn_mapping.setObjectName(u"btn_mapping")
-        sizePolicy2.setHeightForWidth(self.btn_mapping.sizePolicy().hasHeightForWidth())
-        self.btn_mapping.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_mapping.sizePolicy().hasHeightForWidth())
+        self.btn_mapping.setSizePolicy(sizePolicy3)
         self.btn_mapping.setMaximumSize(QSize(140, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_mapping)
 
         self.btn_trans = DropDownPushButton(self.widget_1_2)
         self.btn_trans.setObjectName(u"btn_trans")
-        sizePolicy2.setHeightForWidth(self.btn_trans.sizePolicy().hasHeightForWidth())
-        self.btn_trans.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_trans.sizePolicy().hasHeightForWidth())
+        self.btn_trans.setSizePolicy(sizePolicy3)
         self.btn_trans.setMaximumSize(QSize(100, 16777215))
 
         self.horizontalLayout_15.addWidget(self.btn_trans)
@@ -345,11 +351,8 @@ class Ui_MainWindow(object):
         self.lab_table_comment = BodyLabel(self.widget_1_2)
         self.lab_table_comment.setObjectName(u"lab_table_comment")
         self.lab_table_comment.setEnabled(True)
-        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.lab_table_comment.sizePolicy().hasHeightForWidth())
-        self.lab_table_comment.setSizePolicy(sizePolicy4)
+        sizePolicy.setHeightForWidth(self.lab_table_comment.sizePolicy().hasHeightForWidth())
+        self.lab_table_comment.setSizePolicy(sizePolicy)
 
         self.horizontalLayout_12.addWidget(self.lab_table_comment)
 
@@ -397,15 +400,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.edt_yf = LineEdit(self.widget_1_3)
         self.edt_yf.setObjectName(u"edt_yf")
-        sizePolicy2.setHeightForWidth(self.edt_yf.sizePolicy().hasHeightForWidth())
-        self.edt_yf.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.edt_yf.sizePolicy().hasHeightForWidth())
+        self.edt_yf.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout.addWidget(self.edt_yf)
 
         self.btn_yf = PushButton(self.widget_1_3)
         self.btn_yf.setObjectName(u"btn_yf")
-        sizePolicy2.setHeightForWidth(self.btn_yf.sizePolicy().hasHeightForWidth())
-        self.btn_yf.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.btn_yf.sizePolicy().hasHeightForWidth())
+        self.btn_yf.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout.addWidget(self.btn_yf)
 
@@ -428,8 +431,8 @@ class Ui_MainWindow(object):
 
         self.edt_sta = TextEdit(self.widget_1_3)
         self.edt_sta.setObjectName(u"edt_sta")
-        sizePolicy3.setHeightForWidth(self.edt_sta.sizePolicy().hasHeightForWidth())
-        self.edt_sta.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.edt_sta.sizePolicy().hasHeightForWidth())
+        self.edt_sta.setSizePolicy(sizePolicy4)
         self.edt_sta.setReadOnly(False)
 
         self.verticalLayout_10.addWidget(self.edt_sta)
@@ -448,8 +451,8 @@ class Ui_MainWindow(object):
 
         self.edt_ods = TextEdit(self.widget_1_3)
         self.edt_ods.setObjectName(u"edt_ods")
-        sizePolicy3.setHeightForWidth(self.edt_ods.sizePolicy().hasHeightForWidth())
-        self.edt_ods.setSizePolicy(sizePolicy3)
+        sizePolicy4.setHeightForWidth(self.edt_ods.sizePolicy().hasHeightForWidth())
+        self.edt_ods.setSizePolicy(sizePolicy4)
         self.edt_ods.setReadOnly(False)
 
         self.verticalLayout_23.addWidget(self.edt_ods)
@@ -624,22 +627,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.label_3 = BodyLabel(self.layoutWidget_9)
         self.label_3.setObjectName(u"label_3")
-        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_16.addWidget(self.label_3)
 
         self.edt_sql_row_1 = LineEdit(self.layoutWidget_9)
         self.edt_sql_row_1.setObjectName(u"edt_sql_row_1")
-        sizePolicy.setHeightForWidth(self.edt_sql_row_1.sizePolicy().hasHeightForWidth())
-        self.edt_sql_row_1.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_row_1.sizePolicy().hasHeightForWidth())
+        self.edt_sql_row_1.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_16.addWidget(self.edt_sql_row_1)
 
         self.btn_sql_execute_1 = PushButton(self.layoutWidget_9)
         self.btn_sql_execute_1.setObjectName(u"btn_sql_execute_1")
-        sizePolicy.setHeightForWidth(self.btn_sql_execute_1.sizePolicy().hasHeightForWidth())
-        self.btn_sql_execute_1.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_sql_execute_1.sizePolicy().hasHeightForWidth())
+        self.btn_sql_execute_1.setSizePolicy(sizePolicy1)
         self.btn_sql_execute_1.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_16.addWidget(self.btn_sql_execute_1)
@@ -650,8 +653,8 @@ class Ui_MainWindow(object):
 
         self.edt_sql_book_1 = LineEdit(self.layoutWidget_9)
         self.edt_sql_book_1.setObjectName(u"edt_sql_book_1")
-        sizePolicy.setHeightForWidth(self.edt_sql_book_1.sizePolicy().hasHeightForWidth())
-        self.edt_sql_book_1.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_book_1.sizePolicy().hasHeightForWidth())
+        self.edt_sql_book_1.setSizePolicy(sizePolicy1)
         self.edt_sql_book_1.setMinimumSize(QSize(200, 0))
         self.edt_sql_book_1.setFocusPolicy(Qt.ClickFocus)
 
@@ -761,22 +764,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
         self.label_9 = BodyLabel(self.layoutWidget_20)
         self.label_9.setObjectName(u"label_9")
-        sizePolicy.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
-        self.label_9.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_9.sizePolicy().hasHeightForWidth())
+        self.label_9.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_27.addWidget(self.label_9)
 
         self.edt_sql_row_2 = LineEdit(self.layoutWidget_20)
         self.edt_sql_row_2.setObjectName(u"edt_sql_row_2")
-        sizePolicy.setHeightForWidth(self.edt_sql_row_2.sizePolicy().hasHeightForWidth())
-        self.edt_sql_row_2.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_row_2.sizePolicy().hasHeightForWidth())
+        self.edt_sql_row_2.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_27.addWidget(self.edt_sql_row_2)
 
         self.btn_sql_execute_2 = PushButton(self.layoutWidget_20)
         self.btn_sql_execute_2.setObjectName(u"btn_sql_execute_2")
-        sizePolicy.setHeightForWidth(self.btn_sql_execute_2.sizePolicy().hasHeightForWidth())
-        self.btn_sql_execute_2.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_sql_execute_2.sizePolicy().hasHeightForWidth())
+        self.btn_sql_execute_2.setSizePolicy(sizePolicy1)
         self.btn_sql_execute_2.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_27.addWidget(self.btn_sql_execute_2)
@@ -787,8 +790,8 @@ class Ui_MainWindow(object):
 
         self.edt_sql_book_2 = LineEdit(self.layoutWidget_20)
         self.edt_sql_book_2.setObjectName(u"edt_sql_book_2")
-        sizePolicy.setHeightForWidth(self.edt_sql_book_2.sizePolicy().hasHeightForWidth())
-        self.edt_sql_book_2.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_book_2.sizePolicy().hasHeightForWidth())
+        self.edt_sql_book_2.setSizePolicy(sizePolicy1)
         self.edt_sql_book_2.setMinimumSize(QSize(200, 0))
         self.edt_sql_book_2.setFocusPolicy(Qt.ClickFocus)
 
@@ -899,22 +902,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_35.setObjectName(u"horizontalLayout_35")
         self.label_10 = BodyLabel(self.layoutWidget_22)
         self.label_10.setObjectName(u"label_10")
-        sizePolicy.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
-        self.label_10.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_10.sizePolicy().hasHeightForWidth())
+        self.label_10.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_35.addWidget(self.label_10)
 
         self.edt_sql_row_3 = LineEdit(self.layoutWidget_22)
         self.edt_sql_row_3.setObjectName(u"edt_sql_row_3")
-        sizePolicy.setHeightForWidth(self.edt_sql_row_3.sizePolicy().hasHeightForWidth())
-        self.edt_sql_row_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_row_3.sizePolicy().hasHeightForWidth())
+        self.edt_sql_row_3.setSizePolicy(sizePolicy1)
 
         self.horizontalLayout_35.addWidget(self.edt_sql_row_3)
 
         self.btn_sql_execute_3 = PushButton(self.layoutWidget_22)
         self.btn_sql_execute_3.setObjectName(u"btn_sql_execute_3")
-        sizePolicy.setHeightForWidth(self.btn_sql_execute_3.sizePolicy().hasHeightForWidth())
-        self.btn_sql_execute_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_sql_execute_3.sizePolicy().hasHeightForWidth())
+        self.btn_sql_execute_3.setSizePolicy(sizePolicy1)
         self.btn_sql_execute_3.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_35.addWidget(self.btn_sql_execute_3)
@@ -925,8 +928,8 @@ class Ui_MainWindow(object):
 
         self.edt_sql_book_3 = LineEdit(self.layoutWidget_22)
         self.edt_sql_book_3.setObjectName(u"edt_sql_book_3")
-        sizePolicy.setHeightForWidth(self.edt_sql_book_3.sizePolicy().hasHeightForWidth())
-        self.edt_sql_book_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.edt_sql_book_3.sizePolicy().hasHeightForWidth())
+        self.edt_sql_book_3.setSizePolicy(sizePolicy1)
         self.edt_sql_book_3.setMinimumSize(QSize(200, 0))
         self.edt_sql_book_3.setFocusPolicy(Qt.ClickFocus)
 
@@ -1107,16 +1110,16 @@ class Ui_MainWindow(object):
 
         self.btn_dbinfo_add = PushButton(self.widget_db_left)
         self.btn_dbinfo_add.setObjectName(u"btn_dbinfo_add")
-        sizePolicy.setHeightForWidth(self.btn_dbinfo_add.sizePolicy().hasHeightForWidth())
-        self.btn_dbinfo_add.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_dbinfo_add.sizePolicy().hasHeightForWidth())
+        self.btn_dbinfo_add.setSizePolicy(sizePolicy1)
         self.btn_dbinfo_add.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_4.addWidget(self.btn_dbinfo_add)
 
         self.btn_dbinfo_del = PushButton(self.widget_db_left)
         self.btn_dbinfo_del.setObjectName(u"btn_dbinfo_del")
-        sizePolicy.setHeightForWidth(self.btn_dbinfo_del.sizePolicy().hasHeightForWidth())
-        self.btn_dbinfo_del.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_dbinfo_del.sizePolicy().hasHeightForWidth())
+        self.btn_dbinfo_del.setSizePolicy(sizePolicy1)
         self.btn_dbinfo_del.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_4.addWidget(self.btn_dbinfo_del)
@@ -1351,16 +1354,16 @@ class Ui_MainWindow(object):
         self.HL8.setObjectName(u"HL8")
         self.btn_test_db = PushButton(self.widget_db_right)
         self.btn_test_db.setObjectName(u"btn_test_db")
-        sizePolicy.setHeightForWidth(self.btn_test_db.sizePolicy().hasHeightForWidth())
-        self.btn_test_db.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_test_db.sizePolicy().hasHeightForWidth())
+        self.btn_test_db.setSizePolicy(sizePolicy1)
         self.btn_test_db.setMinimumSize(QSize(100, 0))
 
         self.HL8.addWidget(self.btn_test_db)
 
         self.btn_save_db = PushButton(self.widget_db_right)
         self.btn_save_db.setObjectName(u"btn_save_db")
-        sizePolicy.setHeightForWidth(self.btn_save_db.sizePolicy().hasHeightForWidth())
-        self.btn_save_db.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_save_db.sizePolicy().hasHeightForWidth())
+        self.btn_save_db.setSizePolicy(sizePolicy1)
         self.btn_save_db.setMinimumSize(QSize(100, 0))
 
         self.HL8.addWidget(self.btn_save_db)
@@ -1424,8 +1427,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_37.setObjectName(u"horizontalLayout_37")
         self.icon_dpi = IconWidget(self.widget_5_1)
         self.icon_dpi.setObjectName(u"icon_dpi")
-        sizePolicy.setHeightForWidth(self.icon_dpi.sizePolicy().hasHeightForWidth())
-        self.icon_dpi.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_dpi.sizePolicy().hasHeightForWidth())
+        self.icon_dpi.setSizePolicy(sizePolicy1)
         self.icon_dpi.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_37.addWidget(self.icon_dpi)
@@ -1473,8 +1476,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_40.setObjectName(u"horizontalLayout_40")
         self.icon_yunmu = IconWidget(self.widget_5_9)
         self.icon_yunmu.setObjectName(u"icon_yunmu")
-        sizePolicy.setHeightForWidth(self.icon_yunmu.sizePolicy().hasHeightForWidth())
-        self.icon_yunmu.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_yunmu.sizePolicy().hasHeightForWidth())
+        self.icon_yunmu.setSizePolicy(sizePolicy1)
         self.icon_yunmu.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_40.addWidget(self.icon_yunmu)
@@ -1512,8 +1515,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_46.setObjectName(u"horizontalLayout_46")
         self.icon_theme = IconWidget(self.widget_5_10)
         self.icon_theme.setObjectName(u"icon_theme")
-        sizePolicy.setHeightForWidth(self.icon_theme.sizePolicy().hasHeightForWidth())
-        self.icon_theme.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_theme.sizePolicy().hasHeightForWidth())
+        self.icon_theme.setSizePolicy(sizePolicy1)
         self.icon_theme.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_46.addWidget(self.icon_theme)
@@ -1555,8 +1558,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_47.setObjectName(u"horizontalLayout_47")
         self.icon_theme_color = IconWidget(self.widget_5_11)
         self.icon_theme_color.setObjectName(u"icon_theme_color")
-        sizePolicy.setHeightForWidth(self.icon_theme_color.sizePolicy().hasHeightForWidth())
-        self.icon_theme_color.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_theme_color.sizePolicy().hasHeightForWidth())
+        self.icon_theme_color.setSizePolicy(sizePolicy1)
         self.icon_theme_color.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_47.addWidget(self.icon_theme_color)
@@ -1581,8 +1584,8 @@ class Ui_MainWindow(object):
 
         self.btn_choose_color = PushButton(self.widget_5_11)
         self.btn_choose_color.setObjectName(u"btn_choose_color")
-        sizePolicy.setHeightForWidth(self.btn_choose_color.sizePolicy().hasHeightForWidth())
-        self.btn_choose_color.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_choose_color.sizePolicy().hasHeightForWidth())
+        self.btn_choose_color.setSizePolicy(sizePolicy1)
         self.btn_choose_color.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_47.addWidget(self.btn_choose_color)
@@ -1606,8 +1609,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
         self.icon_ykl = IconWidget(self.widget_5_12)
         self.icon_ykl.setObjectName(u"icon_ykl")
-        sizePolicy.setHeightForWidth(self.icon_ykl.sizePolicy().hasHeightForWidth())
-        self.icon_ykl.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_ykl.sizePolicy().hasHeightForWidth())
+        self.icon_ykl.setSizePolicy(sizePolicy1)
         self.icon_ykl.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_48.addWidget(self.icon_ykl)
@@ -1661,8 +1664,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_42.setObjectName(u"horizontalLayout_42")
         self.icon_help = IconWidget(self.widget_5_2)
         self.icon_help.setObjectName(u"icon_help")
-        sizePolicy.setHeightForWidth(self.icon_help.sizePolicy().hasHeightForWidth())
-        self.icon_help.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_help.sizePolicy().hasHeightForWidth())
+        self.icon_help.setSizePolicy(sizePolicy1)
         self.icon_help.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_42.addWidget(self.icon_help)
@@ -1687,8 +1690,8 @@ class Ui_MainWindow(object):
 
         self.btn_file_blood_2 = PushButton(self.widget_5_2)
         self.btn_file_blood_2.setObjectName(u"btn_file_blood_2")
-        sizePolicy.setHeightForWidth(self.btn_file_blood_2.sizePolicy().hasHeightForWidth())
-        self.btn_file_blood_2.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_file_blood_2.sizePolicy().hasHeightForWidth())
+        self.btn_file_blood_2.setSizePolicy(sizePolicy1)
         self.btn_file_blood_2.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_42.addWidget(self.btn_file_blood_2)
@@ -1703,8 +1706,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
         self.icon_res = IconWidget(self.widget_5_3)
         self.icon_res.setObjectName(u"icon_res")
-        sizePolicy.setHeightForWidth(self.icon_res.sizePolicy().hasHeightForWidth())
-        self.icon_res.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_res.sizePolicy().hasHeightForWidth())
+        self.icon_res.setSizePolicy(sizePolicy1)
         self.icon_res.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_43.addWidget(self.icon_res)
@@ -1729,8 +1732,8 @@ class Ui_MainWindow(object):
 
         self.btn_file_blood_3 = PushButton(self.widget_5_3)
         self.btn_file_blood_3.setObjectName(u"btn_file_blood_3")
-        sizePolicy.setHeightForWidth(self.btn_file_blood_3.sizePolicy().hasHeightForWidth())
-        self.btn_file_blood_3.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_file_blood_3.sizePolicy().hasHeightForWidth())
+        self.btn_file_blood_3.setSizePolicy(sizePolicy1)
         self.btn_file_blood_3.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_43.addWidget(self.btn_file_blood_3)
@@ -1745,8 +1748,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_45.setObjectName(u"horizontalLayout_45")
         self.icon_update = IconWidget(self.widget_5_4)
         self.icon_update.setObjectName(u"icon_update")
-        sizePolicy.setHeightForWidth(self.icon_update.sizePolicy().hasHeightForWidth())
-        self.icon_update.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_update.sizePolicy().hasHeightForWidth())
+        self.icon_update.setSizePolicy(sizePolicy1)
         self.icon_update.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_45.addWidget(self.icon_update)
@@ -1771,8 +1774,8 @@ class Ui_MainWindow(object):
 
         self.btn_update_log = PushButton(self.widget_5_4)
         self.btn_update_log.setObjectName(u"btn_update_log")
-        sizePolicy.setHeightForWidth(self.btn_update_log.sizePolicy().hasHeightForWidth())
-        self.btn_update_log.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_update_log.sizePolicy().hasHeightForWidth())
+        self.btn_update_log.setSizePolicy(sizePolicy1)
         self.btn_update_log.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_45.addWidget(self.btn_update_log)
@@ -1787,8 +1790,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_44.setObjectName(u"horizontalLayout_44")
         self.icon_about = IconWidget(self.widget_5_5)
         self.icon_about.setObjectName(u"icon_about")
-        sizePolicy.setHeightForWidth(self.icon_about.sizePolicy().hasHeightForWidth())
-        self.icon_about.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_about.sizePolicy().hasHeightForWidth())
+        self.icon_about.setSizePolicy(sizePolicy1)
         self.icon_about.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_44.addWidget(self.icon_about)
@@ -1813,8 +1816,8 @@ class Ui_MainWindow(object):
 
         self.btn_file_blood_5 = PushButton(self.widget_5_5)
         self.btn_file_blood_5.setObjectName(u"btn_file_blood_5")
-        sizePolicy.setHeightForWidth(self.btn_file_blood_5.sizePolicy().hasHeightForWidth())
-        self.btn_file_blood_5.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_file_blood_5.sizePolicy().hasHeightForWidth())
+        self.btn_file_blood_5.setSizePolicy(sizePolicy1)
         self.btn_file_blood_5.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_44.addWidget(self.btn_file_blood_5)
@@ -1842,8 +1845,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.icon_file_blood = IconWidget(self.widget_5_6)
         self.icon_file_blood.setObjectName(u"icon_file_blood")
-        sizePolicy.setHeightForWidth(self.icon_file_blood.sizePolicy().hasHeightForWidth())
-        self.icon_file_blood.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_file_blood.sizePolicy().hasHeightForWidth())
+        self.icon_file_blood.setSizePolicy(sizePolicy1)
         self.icon_file_blood.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_24.addWidget(self.icon_file_blood)
@@ -1868,8 +1871,8 @@ class Ui_MainWindow(object):
 
         self.btn_file_blood = PrimaryPushButton(self.widget_5_6)
         self.btn_file_blood.setObjectName(u"btn_file_blood")
-        sizePolicy.setHeightForWidth(self.btn_file_blood.sizePolicy().hasHeightForWidth())
-        self.btn_file_blood.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_file_blood.sizePolicy().hasHeightForWidth())
+        self.btn_file_blood.setSizePolicy(sizePolicy1)
         self.btn_file_blood.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_24.addWidget(self.btn_file_blood)
@@ -1884,8 +1887,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23.setContentsMargins(9, 9, 9, 9)
         self.icon_col_trans = IconWidget(self.widget_5_7)
         self.icon_col_trans.setObjectName(u"icon_col_trans")
-        sizePolicy.setHeightForWidth(self.icon_col_trans.sizePolicy().hasHeightForWidth())
-        self.icon_col_trans.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_col_trans.sizePolicy().hasHeightForWidth())
+        self.icon_col_trans.setSizePolicy(sizePolicy1)
         self.icon_col_trans.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_23.addWidget(self.icon_col_trans)
@@ -1908,8 +1911,8 @@ class Ui_MainWindow(object):
 
         self.btn_col_trans = PrimaryPushButton(self.widget_5_7)
         self.btn_col_trans.setObjectName(u"btn_col_trans")
-        sizePolicy.setHeightForWidth(self.btn_col_trans.sizePolicy().hasHeightForWidth())
-        self.btn_col_trans.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_col_trans.sizePolicy().hasHeightForWidth())
+        self.btn_col_trans.setSizePolicy(sizePolicy1)
         self.btn_col_trans.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_23.addWidget(self.btn_col_trans)
@@ -1924,8 +1927,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.setContentsMargins(9, 9, 9, 9)
         self.icon_similarity = IconWidget(self.widget_5_8)
         self.icon_similarity.setObjectName(u"icon_similarity")
-        sizePolicy.setHeightForWidth(self.icon_similarity.sizePolicy().hasHeightForWidth())
-        self.icon_similarity.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.icon_similarity.sizePolicy().hasHeightForWidth())
+        self.icon_similarity.setSizePolicy(sizePolicy1)
         self.icon_similarity.setMinimumSize(QSize(16, 16))
 
         self.horizontalLayout_41.addWidget(self.icon_similarity)
@@ -1946,8 +1949,8 @@ class Ui_MainWindow(object):
 
         self.btn_similarity = PrimaryPushButton(self.widget_5_8)
         self.btn_similarity.setObjectName(u"btn_similarity")
-        sizePolicy.setHeightForWidth(self.btn_similarity.sizePolicy().hasHeightForWidth())
-        self.btn_similarity.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_similarity.sizePolicy().hasHeightForWidth())
+        self.btn_similarity.setSizePolicy(sizePolicy1)
         self.btn_similarity.setMinimumSize(QSize(100, 0))
 
         self.horizontalLayout_41.addWidget(self.btn_similarity)
@@ -1978,7 +1981,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"DataView										Developed by LJZ\uff0cQQ\uff1a786824023", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"DataView                                                  - Developed by LJZ    - QQ 786824023", None))
         self.pushButton_1.setText(QCoreApplication.translate("MainWindow", u"\u8868\u9884\u89c8", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u8fc7\u7a0b\u9884\u89c8", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"SQ\u6267\u884c\u7a97\u53e3", None))
@@ -2001,12 +2004,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"\u8868\u540d", None));
         ___qtablewidgetitem2 = self.tbw_table.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u6ce8\u91ca", None));
-        self.cbb_find_col_1.setItemText(0, QCoreApplication.translate("MainWindow", u"--\u6761\u4ef61--", None))
-
-        self.cbb_find_col_2.setItemText(0, QCoreApplication.translate("MainWindow", u"--\u6761\u4ef62--", None))
-
-        self.cbb_find_col_3.setItemText(0, QCoreApplication.translate("MainWindow", u"--\u6761\u4ef63--", None))
-
+        self.cbb_find_col_1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"--\u6761\u4ef61--", None))
+        self.cbb_find_col_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"--\u6761\u4ef62--", None))
+        self.cbb_find_col_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"--\u6761\u4ef63--", None))
         self.edt_result_row.setText("")
         self.edt_result_row.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u9ed8\u8ba41000\u884c", None))
         self.btn_get_data.setText(QCoreApplication.translate("MainWindow", u"\u67e5\u8be2\u6570\u636e", None))

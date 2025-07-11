@@ -208,9 +208,6 @@ class MyMainWindow(QMainWindow):
         self.myUI.cbb_find_col_1.clear()
         self.myUI.cbb_find_col_2.clear()
         self.myUI.cbb_find_col_3.clear()
-        self.myUI.cbb_find_col_1.addItem("--条件1--")
-        self.myUI.cbb_find_col_2.addItem("--条件2--")
-        self.myUI.cbb_find_col_3.addItem("--条件3--")
         self.myUI.edt_find_str_1.setText("")
         self.myUI.edt_find_str_2.setText("")
         self.myUI.edt_find_str_3.setText("")
@@ -720,10 +717,23 @@ class MyMainWindow(QMainWindow):
             self.myUI.cbb_find_col_1.clear()
             self.myUI.cbb_find_col_2.clear()
             self.myUI.cbb_find_col_3.clear()
+
             # 添加筛选条件
-            self.myUI.cbb_find_col_1.addItems(["--条件1--"] + cbb_find_col)
-            self.myUI.cbb_find_col_2.addItems(["--条件2--"] + cbb_find_col)
-            self.myUI.cbb_find_col_3.addItems(["--条件3--"] + cbb_find_col)
+            self.myUI.cbb_find_col_1.addItems(cbb_find_col)
+            self.myUI.cbb_find_col_1.setCurrentIndex(-1)
+            self.myUI.cbb_find_col_2.addItems(cbb_find_col)
+            self.myUI.cbb_find_col_2.setCurrentIndex(-1)
+            self.myUI.cbb_find_col_3.addItems(cbb_find_col)
+            self.myUI.cbb_find_col_3.setCurrentIndex(-1)
+
+            items = cbb_find_col
+            completer = QCompleter(items)  # 创建补全器
+            completer.setFilterMode(Qt.MatchContains)  # 允许子字符串匹配
+            completer.setCaseSensitivity(Qt.CaseInsensitive)  # 不区分大小写
+            completer.setMaxVisibleItems(10)  # 设置显示的选项数
+            self.myUI.cbb_find_col_1.setCompleter(completer)  # 设置补全器
+            self.myUI.cbb_find_col_2.setCompleter(completer)  # 设置补全器
+            self.myUI.cbb_find_col_3.setCompleter(completer)  # 设置补全器
 
         if obj == self.myUI.btn_get_data.objectName():  # 查询数据
             # 加工表清单
@@ -941,7 +951,7 @@ class MyMainWindow(QMainWindow):
 
         sql = f"select * from {database_name}.{table_name} where 1=1"
         # 获取条件
-        if self.myUI.cbb_find_col_1.currentIndex() > 0:
+        if self.myUI.cbb_find_col_1.currentIndex() >= 0:
             # print(self.myUI.cbx_is_sensitive.isChecked())
             # sql = (sql +
             #        " and upper(" +
@@ -951,10 +961,10 @@ class MyMainWindow(QMainWindow):
             #        "%')")
             # sql = f"{sql} and upper({self.myUI.cbb_find_col_1.currentText()}) like upper('{self.myUI.edt_find_str_1.text().strip()}')"
             sql = f"{sql} and {self.myUI.cbb_find_col_1.currentText()} like '{self.myUI.edt_find_str_1.text().strip()}'" if self.myUI.cbx_is_sensitive.isChecked() else f"{sql} and upper({self.myUI.cbb_find_col_1.currentText()}) like upper('{self.myUI.edt_find_str_1.text().strip()}')"
-        if self.myUI.cbb_find_col_2.currentIndex() > 0:
+        if self.myUI.cbb_find_col_2.currentIndex() >= 0:
             # sql = f"{sql} and upper({self.myUI.cbb_find_col_2.currentText()}) like upper('{self.myUI.edt_find_str_2.text().strip()}')"
             sql = f"{sql} and {self.myUI.cbb_find_col_2.currentText()} like '{self.myUI.edt_find_str_2.text().strip()}'" if self.myUI.cbx_is_sensitive.isChecked() else f"{sql} and upper({self.myUI.cbb_find_col_2.currentText()}) like upper('{self.myUI.edt_find_str_2.text().strip()}')"
-        if self.myUI.cbb_find_col_3.currentIndex() > 0:
+        if self.myUI.cbb_find_col_3.currentIndex() >= 0:
             # sql = f"{sql} and upper({self.myUI.cbb_find_col_3.currentText()}) like upper('{self.myUI.edt_find_str_3.text().strip()}')"
             sql = f"{sql} and {self.myUI.cbb_find_col_3.currentText()} like '{self.myUI.edt_find_str_3.text().strip()}'" if self.myUI.cbx_is_sensitive.isChecked() else f"{sql} and upper({self.myUI.cbb_find_col_3.currentText()}) like upper('{self.myUI.edt_find_str_3.text().strip()}')"
         row = int(self.myUI.edt_result_row.text()) if self.myUI.edt_result_row.text() else 1000
@@ -1055,7 +1065,7 @@ class MyMainWindow(QMainWindow):
         #     icon = QIcon(f.name)
         # self.setWindowIcon(icon)
 
-        window_icon = QIcon(f"{os.path.dirname(sys.argv[0])}/_internal/aaa_etc/weixinshoucang.ico")
+        window_icon = QIcon(f"{os.path.dirname(sys.argv[0])}/_internal/aaa_etc/application.ico")
         # 设置窗口图标
         self.setWindowIcon(window_icon)
         # self.setWindowIcon(FluentIcon.GAME.icon())
@@ -1079,17 +1089,17 @@ class MyMainWindow(QMainWindow):
 
 
         # 表、过程清单设置列宽
-        self.myUI.tbw_table.setColumnWidth(0, 120)
-        self.myUI.tbw_table.setColumnWidth(1, 200)
-        self.myUI.tbw_table.setColumnWidth(2, 200)
-        self.myUI.tbw_procedure.setColumnWidth(0, 120)
-        self.myUI.tbw_procedure.setColumnWidth(1, 150)
-        self.myUI.tbw_procedure.setColumnWidth(2, 200)
+        # self.myUI.tbw_table.setColumnWidth(0, 120)
+        # self.myUI.tbw_table.setColumnWidth(1, 200)
+        # self.myUI.tbw_table.setColumnWidth(2, 200)
+        # self.myUI.tbw_procedure.setColumnWidth(0, 120)
+        # self.myUI.tbw_procedure.setColumnWidth(1, 150)
+        # self.myUI.tbw_procedure.setColumnWidth(2, 200)
 
-        self.myUI.splitter_table.setSizes([1000, 2000, 0])  # 设置每个的宽度，单位像素，受外部框体的限制
+        self.myUI.splitter_table.setSizes([1000, 3000, 0])  # 设置每个的宽度，单位像素，受外部框体的限制
         self.myUI.splitter_procedure.setSizes([1000, 2000, 0])  # 设置每个的宽度，单位像素，受外部框体的限制
 
-        self.myUI.splitter_procedure.setSizes([2000, 4000, 1000])  # 设置每个的宽度，单位像素，受外部框体的限制
+        self.myUI.splitter_procedure.setSizes([2000, 5000, 1000])  # 设置每个的宽度，单位像素，受外部框体的限制
 
         # 读取sql标签列表
         file_list = [file.split(".")[0] for file in os.listdir(self.sql_book_dir) if file.endswith(".txt")]
@@ -1494,7 +1504,7 @@ class MyMainWindow(QMainWindow):
 
 if __name__ == "__main__":
 
-    # pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\weixinshoucang.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
+    # pyinstaller -D -i C:\Users\lojn\PycharmProjects\DataView\img\application.ico --add-data drivers/dameng/dpi/*:. --add-data drivers/oracle/instantclient/*.dll:. --add-data _internal/aaa_book/*:aaa_book --add-data _internal/aaa_etc/*:aaa_etc --add-data _internal/aaa_sql/*:aaa_sql -n DataView App.py -w
 
     # 环境变量 dpi
     cf = ConfigFile(os.path.dirname(sys.argv[0]) + "/_internal/aaa_etc/environ.ini", "utf=8")  # 配置文件路径：当前
